@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'ChirpRadio' target in the 'ChirpRadio' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
