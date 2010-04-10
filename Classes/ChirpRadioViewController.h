@@ -12,7 +12,9 @@
 
 @interface ChirpRadioViewController : UIViewController {
 	AudioStreamer *streamer;
+	IBOutlet UIButton *playbackButton;
 }
 
+- (IBAction)playbackButtonPressed:(id)sender;
 @end
 

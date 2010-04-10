@@ -29,6 +29,15 @@
 }
 */
 
+- (IBAction)playbackButtonPressed:(id)sender
+{
+	if ([streamer isPlaying])
+	{
+		[streamer pause];
+	} else {
+		[streamer start];
+	}
+}
 
 - (void)destroyStreamer
 {
@@ -46,10 +55,39 @@
 	{
 		return;
 	}
-	
 	[self destroyStreamer];
+
 	NSURL *url = [NSURL URLWithString:@"http://www.live365.com/play/chirpradio"];
 	streamer = [[AudioStreamer alloc] initWithURL:url];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+																					 selector:@selector(playbackStateChanged:)
+																							 name:ASStatusChangedNotification
+																						 object:streamer];	
+}
+
+- (void)playbackStateChanged:(NSNotification *)aNotification
+{
+	if ([streamer isWaiting])
+	{
+		NSLog(@"streamer is waiting");
+	}
+	else if ([streamer isPlaying])
+	{
+		NSLog(@"streamer is playing");
+		//[self setButtonImage:[UIImage imageNamed:@"stopbutton.png"]];
+	}
+	else if ([streamer isPaused])
+	{
+		NSLog(@"streamer is paused");
+		//[self setButtonImage:[UIImage imageNamed:@"stopbutton.png"]];
+	}
+	else if ([streamer isIdle])
+	{
+		NSLog(@"streamer is idle");
+		//[self destroyStreamer];
+		//[self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
+	}
 }
 
 
