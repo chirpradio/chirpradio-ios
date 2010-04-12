@@ -12,8 +12,14 @@
 
 @interface ChirpRadioViewController : UIViewController {
 	AudioStreamer *streamer;
-	IBOutlet UIButton *playbackButton;
+  UIView *volumeSlider;
+	UIButton *playbackButton;
+  UILabel *stateLabel;
 }
+
+@property (nonatomic, retain) IBOutlet UIView *volumeSlider;
+@property (nonatomic, retain) IBOutlet UIButton *playbackButton;
+@property (nonatomic, retain) IBOutlet UILabel *stateLabel;
 
 - (IBAction)playbackButtonPressed:(id)sender;
 @end

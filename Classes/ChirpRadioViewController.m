@@ -9,9 +9,13 @@
 #import "ChirpRadioViewController.h"
 #import "AudioStreamer.h"
 #import <CFNetwork/CFNetwork.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation ChirpRadioViewController
 
+@synthesize volumeSlider;
+@synthesize playbackButton;
+@synthesize stateLabel;
 
 /*
  // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -70,31 +74,36 @@
 {
 	if ([streamer isWaiting])
 	{
-		NSLog(@"streamer is waiting");
+    [stateLabel setText:@"loading awesomeness just for you"];
 	}
 	else if ([streamer isPlaying])
 	{
-		NSLog(@"streamer is playing");
-		//[self setButtonImage:[UIImage imageNamed:@"stopbutton.png"]];
-	}
+    [stateLabel setText:@""];
+    [playbackButton setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+  }
 	else if ([streamer isPaused])
 	{
-		NSLog(@"streamer is paused");
-		//[self setButtonImage:[UIImage imageNamed:@"stopbutton.png"]];
+    [stateLabel setText:@""];
+    [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 	}
 	else if ([streamer isIdle])
 	{
-		NSLog(@"streamer is idle");
-		//[self destroyStreamer];
-		//[self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
+    [stateLabel setText:@""];
+    [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 	}
 }
 
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
   [super viewDidLoad];
-	[self createStreamer];
-	[streamer start];
+  
+  MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
+  [volumeSlider addSubview:volumeView];
+  [volumeView sizeToFit];
+  
+  [self createStreamer];
+  [streamer start];
 }
 
 
@@ -114,12 +123,13 @@
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
 
 
 - (void)dealloc {
+  [volumeSlider release];
+  [stateLabel release];
+  [playbackButton release];
   [super dealloc];
 }
 
