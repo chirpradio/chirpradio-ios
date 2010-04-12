@@ -75,17 +75,17 @@
 					<object class="IBUILabel" id="63200290">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 258}, {280, 21}}</string>
+						<string key="NSFrame">{{20, 335}, {280, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">xx</string>
+						<string key="IBUIText">state</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
+							<bytes key="NSRGB">MC4xNzkzNDc4MjYxIDAuMTc5MzQ3ODI2MSAwLjE3OTM0NzgyNjEAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -95,7 +95,7 @@
 					<object class="IBUIButton" id="61989573">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{133, 379}, {54, 37}}</string>
+						<string key="NSFrame">{{133, 368}, {54, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -126,7 +126,7 @@
 					<object class="IBUIView" id="687614359">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 412}, {280, 48}}</string>
+						<string key="NSFrame">{{20, 413}, {280, 48}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -220,10 +220,10 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="407944502"/>
-							<reference ref="63200290"/>
 							<reference ref="405545310"/>
-							<reference ref="687614359"/>
 							<reference ref="61989573"/>
+							<reference ref="687614359"/>
+							<reference ref="63200290"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -595,7 +595,7 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{320, 480}</string>
 				<string>{320, 96}</string>
-				<string>{36, 33}</string>
+				<string>{28, 28}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">107</string>

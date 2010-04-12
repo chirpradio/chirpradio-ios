@@ -74,21 +74,31 @@
 {
 	if ([streamer isWaiting])
 	{
+    [playbackButton setEnabled:NO];
+    [playbackButton setAlpha:0.3];
+    
     [stateLabel setText:@"loading awesomeness just for you"];
 	}
 	else if ([streamer isPlaying])
 	{
     [stateLabel setText:@""];
+    [playbackButton setEnabled:YES];
+    [playbackButton setAlpha:1.0];
+    
     [playbackButton setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
   }
 	else if ([streamer isPaused])
 	{
     [stateLabel setText:@""];
+    [playbackButton setEnabled:YES];
+    [playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 	}
 	else if ([streamer isIdle])
 	{
     [stateLabel setText:@""];
+    [playbackButton setEnabled:YES];
+    [playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
 	}
 }

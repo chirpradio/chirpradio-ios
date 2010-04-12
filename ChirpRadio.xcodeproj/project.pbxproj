@@ -22,8 +22,8 @@
 		524FBA271170283000EE8511 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 524FBA261170283000EE8511 /* background.png */; };
 		5273876511728FDB00C194D8 /* controlsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5273876411728FDB00C194D8 /* controlsBackground.png */; };
 		527387C71172AEA800C194D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527387C61172AEA800C194D8 /* MediaPlayer.framework */; };
-		52A2D77C1172B1A10033FD2E /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A2D77A1172B1A10033FD2E /* playButton.png */; };
-		52A2D77D1172B1A10033FD2E /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A2D77B1172B1A10033FD2E /* pauseButton.png */; };
+		5280CE121172D21600C03044 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE101172D21600C03044 /* playButton.png */; };
+		5280CE2A1172D38A00C03044 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE291172D38A00C03044 /* pauseButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +47,8 @@
 		524FBA261170283000EE8511 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		5273876411728FDB00C194D8 /* controlsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controlsBackground.png; sourceTree = "<group>"; };
 		527387C61172AEA800C194D8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		52A2D77A1172B1A10033FD2E /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
-		52A2D77B1172B1A10033FD2E /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
+		5280CE101172D21600C03044 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
+		5280CE291172D38A00C03044 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ChirpRadio-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,8 +117,8 @@
 				524FBA241170282A00EE8511 /* icon.png */,
 				524FBA261170283000EE8511 /* background.png */,
 				5273876411728FDB00C194D8 /* controlsBackground.png */,
-				52A2D77A1172B1A10033FD2E /* playButton.png */,
-				52A2D77B1172B1A10033FD2E /* pauseButton.png */,
+				5280CE101172D21600C03044 /* playButton.png */,
+				5280CE291172D38A00C03044 /* pauseButton.png */,
 				2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */,
@@ -186,8 +186,8 @@
 				524FBA251170282A00EE8511 /* icon.png in Resources */,
 				524FBA271170283000EE8511 /* background.png in Resources */,
 				5273876511728FDB00C194D8 /* controlsBackground.png in Resources */,
-				52A2D77C1172B1A10033FD2E /* playButton.png in Resources */,
-				52A2D77D1172B1A10033FD2E /* pauseButton.png in Resources */,
+				5280CE121172D21600C03044 /* playButton.png in Resources */,
+				5280CE2A1172D38A00C03044 /* pauseButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
