@@ -1,5 +1,6 @@
 # xcode noise
 build/*
+tmp/*
 *.pbxuser
 *.mode1v3
 
