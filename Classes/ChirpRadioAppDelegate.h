@@ -11,8 +11,8 @@
 @class ChirpRadioViewController;
 
 @interface ChirpRadioAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    ChirpRadioViewController *viewController;
+  UIWindow *window;
+  ChirpRadioViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

@@ -11,9 +11,9 @@
 @class AudioStreamer;
 
 @interface ChirpRadioViewController : UIViewController {
-	AudioStreamer *streamer;
+  AudioStreamer *streamer;
   UIView *volumeSlider;
-	UIButton *playbackButton;
+  UIButton *playbackButton;
   UILabel *stateLabel;
 }
 

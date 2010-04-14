@@ -35,72 +35,72 @@
 
 - (IBAction)playbackButtonPressed:(id)sender
 {
-	if ([streamer isPlaying])
-	{
-		[streamer pause];
-	} else {
-		[streamer start];
-	}
+  if ([streamer isPlaying])
+  {
+    [streamer pause];
+  } else {
+    [streamer start];
+  }
 }
 
 - (void)destroyStreamer
 {
-	if (streamer)
-	{
-		[streamer stop];
-		[streamer release];
-		streamer = nil;
-	}
+  if (streamer)
+  {
+    [streamer stop];
+    [streamer release];
+    streamer = nil;
+  }
 }
 
 - (void)createStreamer
 {
-	if (streamer)
-	{
-		return;
-	}
-	[self destroyStreamer];
+  if (streamer)
+  {
+    return;
+  }
+  [self destroyStreamer];
   
-	NSURL *url = [NSURL URLWithString:@"http://www.live365.com/play/chirpradio"];
-	streamer = [[AudioStreamer alloc] initWithURL:url];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-																					 selector:@selector(playbackStateChanged:)
-																							 name:ASStatusChangedNotification
-																						 object:streamer];	
+  NSURL *url = [NSURL URLWithString:@"http://www.live365.com/play/chirpradio"];
+  streamer = [[AudioStreamer alloc] initWithURL:url];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(playbackStateChanged:)
+                                               name:ASStatusChangedNotification
+                                             object:streamer];  
 }
 
 - (void)playbackStateChanged:(NSNotification *)aNotification
 {
-	if ([streamer isWaiting])
-	{
+  if ([streamer isWaiting])
+  {
     [playbackButton setEnabled:NO];
     [playbackButton setAlpha:0.3];
     
     [stateLabel setText:@"loading awesomeness just for you"];
-	}
-	else if ([streamer isPlaying])
-	{
+  }
+  else if ([streamer isPlaying])
+  {
     [stateLabel setText:@""];
     [playbackButton setEnabled:YES];
     [playbackButton setAlpha:1.0];
     
     [playbackButton setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
   }
-	else if ([streamer isPaused])
-	{
+  else if ([streamer isPaused])
+  {
     [stateLabel setText:@""];
     [playbackButton setEnabled:YES];
     [playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
-	}
-	else if ([streamer isIdle])
-	{
+  }
+  else if ([streamer isIdle])
+  {
     [stateLabel setText:@""];
     [playbackButton setEnabled:YES];
     [playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
-	}
+  }
 }
 
 
@@ -126,10 +126,10 @@
  */
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+  // Releases the view if it doesn't have a superview.
   [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+  
+  // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
