@@ -24,6 +24,8 @@
 		527387C71172AEA800C194D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527387C61172AEA800C194D8 /* MediaPlayer.framework */; };
 		5280CE121172D21600C03044 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE101172D21600C03044 /* playButton.png */; };
 		5280CE2A1172D38A00C03044 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE291172D38A00C03044 /* pauseButton.png */; };
+		52A8BA5A1183277B0028E6A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */; };
+		52A8BA5D118327D00028E6A5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A8BA5C118327D00028E6A5 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,9 @@
 		527387C61172AEA800C194D8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		5280CE101172D21600C03044 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		5280CE291172D38A00C03044 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
+		52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		52A8BA5B118327D00028E6A5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		52A8BA5C118327D00028E6A5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ChirpRadio-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +68,7 @@
 				524FBA17117026DE00EE8511 /* CFNetwork.framework in Frameworks */,
 				524FBA1B117026E900EE8511 /* AudioToolbox.framework in Frameworks */,
 				527387C71172AEA800C194D8 /* MediaPlayer.framework in Frameworks */,
+				52A8BA5A1183277B0028E6A5 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,8 @@
 				1D3623250D0F684500981E51 /* ChirpRadioAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* ChirpRadioViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */,
+				52A8BA5B118327D00028E6A5 /* Reachability.h */,
+				52A8BA5C118327D00028E6A5 /* Reachability.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 				524FBA16117026DE00EE8511 /* CFNetwork.framework */,
 				524FBA1A117026E900EE8511 /* AudioToolbox.framework */,
 				527387C61172AEA800C194D8 /* MediaPlayer.framework */,
+				52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 				1D3623260D0F684500981E51 /* ChirpRadioAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ChirpRadioViewController.m in Sources */,
 				524FBA14117026C300EE8511 /* AudioStreamer.m in Sources */,
+				52A8BA5D118327D00028E6A5 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

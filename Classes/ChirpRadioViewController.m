@@ -10,6 +10,7 @@
 #import "AudioStreamer.h"
 #import <CFNetwork/CFNetwork.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "Reachability.h"
 
 @implementation ChirpRadioViewController
 
@@ -107,6 +108,12 @@
 - (void)viewDidLoad 
 {
   [super viewDidLoad];
+  
+  
+  // Refactor this into it's own method
+  if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
+    NSLog(@"You have no interwebs.");
+  }
   
   MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
   [volumeSlider addSubview:volumeView];
