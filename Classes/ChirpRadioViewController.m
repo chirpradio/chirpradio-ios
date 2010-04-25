@@ -47,10 +47,11 @@
 
 - (IBAction)playbackButtonPressed:(id)sender
 {
-  if (!streamer)
-  {
-    [self createStreamer];
+  if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable){
+    [self alertNoConnection];
+    return;
   }
+
   if ([streamer isPlaying])
   {
     [streamer pause];
@@ -85,6 +86,9 @@
   }
   else if ([streamer isIdle])
   {
+    // streamer goes idle when Internet connectivity is lost
+    [self destroyStreamer];
+    [self createStreamer];
     [stateLabel setText:@""];
     [playbackButton setEnabled:YES];
     [playbackButton setAlpha:1.0];
