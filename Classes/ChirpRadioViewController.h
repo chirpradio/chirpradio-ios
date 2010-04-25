@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @class AudioStreamer;
+@class Reachability;
 
 @interface ChirpRadioViewController : UIViewController {
   AudioStreamer *streamer;
   UIView *volumeSlider;
   UIButton *playbackButton;
   UILabel *stateLabel;
+
+  Reachability *hostReach;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *volumeSlider;
@@ -22,5 +25,10 @@
 @property (nonatomic, retain) IBOutlet UILabel *stateLabel;
 
 - (IBAction)playbackButtonPressed:(id)sender;
+- (void)destroyStreamer;
+- (void)createStreamer;
+- (void)alertNoConnection;
+- (void)updateInterfaceWithReachability:curReach;
+
 @end
 

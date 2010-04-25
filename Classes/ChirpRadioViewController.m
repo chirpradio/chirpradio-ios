@@ -18,32 +18,6 @@
 @synthesize playbackButton;
 @synthesize stateLabel;
 
-/*
- // The designated initializer. Override to perform setup that is required before the view is loaded.
- - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
- if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
- // Custom initialization
- }
- return self;
- }
- */
-
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView {
- }
- */
-
-- (IBAction)playbackButtonPressed:(id)sender
-{
-  if ([streamer isPlaying])
-  {
-    [streamer pause];
-  } else {
-    [streamer start];
-  }
-}
-
 - (void)destroyStreamer
 {
   if (streamer)
@@ -69,6 +43,20 @@
                                            selector:@selector(playbackStateChanged:)
                                                name:ASStatusChangedNotification
                                              object:streamer];  
+}
+
+- (IBAction)playbackButtonPressed:(id)sender
+{
+  if (!streamer)
+  {
+    [self createStreamer];
+  }
+  if ([streamer isPlaying])
+  {
+    [streamer pause];
+  } else {
+    [streamer start];
+  }
 }
 
 - (void)playbackStateChanged:(NSNotification *)aNotification
@@ -104,25 +92,31 @@
   }
 }
 
-
-- (void)viewDidLoad 
+- (void)alertNoConnection
 {
-  [super viewDidLoad];
-  
-  
-  // Refactor this into it's own method
-  if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
-    NSLog(@"You have no interwebs.");
-  }
-  
-  MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
-  [volumeSlider addSubview:volumeView];
-  [volumeView sizeToFit];
-  
-  [self createStreamer];
-  [streamer start];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Streaming Error" message:@"No Internet Connection"
+												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];   
+    [alert release];
 }
 
+- (void)reachabilityChanged: (NSNotification* )note
+{
+	Reachability* curReach = [note object];
+	NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
+	[self updateInterfaceWithReachability:curReach];
+}
+
+- (void)updateInterfaceWithReachability:curReach
+{
+  BOOL connectionRequired = [curReach connectionRequired];
+  
+  if (connectionRequired) {
+    if ([curReach currentReachabilityStatus] == NotReachable) {
+      [self alertNoConnection];
+    }
+  }
+}
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -131,6 +125,14 @@
  return (interfaceOrientation == UIInterfaceOrientationPortrait);
  }
  */
+
+- (void)dealloc {
+  [volumeSlider release];
+  [stateLabel release];
+  [playbackButton release];
+  [hostReach release];
+  [super dealloc];
+}
 
 - (void)didReceiveMemoryWarning {
   // Releases the view if it doesn't have a superview.
@@ -142,12 +144,22 @@
 - (void)viewDidUnload {
 }
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  
+  // Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the
+  // method "reachabilityChanged" will be called. 
+	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+	
+	hostReach = [[Reachability reachabilityWithHostName: @"www.live365.com"] retain];
+	[hostReach startNotifer];
 
-- (void)dealloc {
-  [volumeSlider release];
-  [stateLabel release];
-  [playbackButton release];
-  [super dealloc];
+  MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
+  [volumeSlider addSubview:volumeView];
+  [volumeView sizeToFit];
+  
+  [self createStreamer];
+  [streamer start];
 }
 
 @end

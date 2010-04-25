@@ -46,6 +46,9 @@
 
 #define kAQMaxPacketDescs 512	// Number of packet descriptions in our array
 
+#define AS_NO_ALERT_ON_ERROR NO	// Disable default error alerts
+
+
 typedef enum
 {
 	AS_INITIALIZED = 0,
