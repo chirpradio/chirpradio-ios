@@ -62,27 +62,28 @@
 
 - (void)playbackStateChanged:(NSNotification *)aNotification
 {
+  UIApplication *app = [UIApplication sharedApplication];
   if ([streamer isWaiting])
   {
-    [playbackButton setEnabled:NO];
-    [playbackButton setAlpha:0.3];
-    
-    [stateLabel setText:@"loading awesomeness just for you"];
+    app.networkActivityIndicatorVisible = YES;
+    //[stateLabel setText:@"loading awesomeness just for you"];
   }
   else if ([streamer isPlaying])
   {
     [stateLabel setText:@""];
-    [playbackButton setEnabled:YES];
-    [playbackButton setAlpha:1.0];
+    //[playbackButton setEnabled:YES];
+    //[playbackButton setAlpha:1.0];
     
     [playbackButton setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
+    app.networkActivityIndicatorVisible = NO;
   }
   else if ([streamer isPaused])
   {
     [stateLabel setText:@""];
-    [playbackButton setEnabled:YES];
-    [playbackButton setAlpha:1.0];
+    //[playbackButton setEnabled:YES];
+    //[playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+    app.networkActivityIndicatorVisible = NO;
   }
   else if ([streamer isIdle])
   {
@@ -90,9 +91,10 @@
     [self destroyStreamer];
     [self createStreamer];
     [stateLabel setText:@""];
-    [playbackButton setEnabled:YES];
-    [playbackButton setAlpha:1.0];
+    //[playbackButton setEnabled:YES];
+    //[playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+    app.networkActivityIndicatorVisible = NO;
   }
 }
 
@@ -113,12 +115,9 @@
 
 - (void)updateInterfaceWithReachability:curReach
 {
-  BOOL connectionRequired = [curReach connectionRequired];
-  
-  if (connectionRequired) {
-    if ([curReach currentReachabilityStatus] == NotReachable) {
-      [self alertNoConnection];
-    }
+  NetworkStatus netStatus = [curReach currentReachabilityStatus];
+  if (netStatus == NotReachable) {
+    [self alertNoConnection];
   }
 }
 
