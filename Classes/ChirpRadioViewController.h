@@ -15,14 +15,12 @@
   AudioStreamer *streamer;
   UIView *volumeSlider;
   UIButton *playbackButton;
-  UILabel *stateLabel;
 
   Reachability *hostReach;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *volumeSlider;
 @property (nonatomic, retain) IBOutlet UIButton *playbackButton;
-@property (nonatomic, retain) IBOutlet UILabel *stateLabel;
 
 - (IBAction)playbackButtonPressed:(id)sender;
 - (void)destroyStreamer;

@@ -16,7 +16,6 @@
 
 @synthesize volumeSlider;
 @synthesize playbackButton;
-@synthesize stateLabel;
 
 - (void)destroyStreamer
 {
@@ -66,22 +65,14 @@
   if ([streamer isWaiting])
   {
     app.networkActivityIndicatorVisible = YES;
-    //[stateLabel setText:@"loading awesomeness just for you"];
   }
   else if ([streamer isPlaying])
   {
-    [stateLabel setText:@""];
-    //[playbackButton setEnabled:YES];
-    //[playbackButton setAlpha:1.0];
-    
     [playbackButton setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
     app.networkActivityIndicatorVisible = NO;
   }
   else if ([streamer isPaused])
   {
-    [stateLabel setText:@""];
-    //[playbackButton setEnabled:YES];
-    //[playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
     app.networkActivityIndicatorVisible = NO;
   }
@@ -90,9 +81,6 @@
     // streamer goes idle when Internet connectivity is lost
     [self destroyStreamer];
     [self createStreamer];
-    [stateLabel setText:@""];
-    //[playbackButton setEnabled:YES];
-    //[playbackButton setAlpha:1.0];
     [playbackButton setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
     app.networkActivityIndicatorVisible = NO;
   }
@@ -131,7 +119,6 @@
 
 - (void)dealloc {
   [volumeSlider release];
-  [stateLabel release];
   [playbackButton release];
   [hostReach release];
   [super dealloc];
