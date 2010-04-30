@@ -222,6 +222,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Carlin";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -229,6 +230,7 @@
 				GCC_PREFIX_HEADER = ChirpRadio_Prefix.pch;
 				INFOPLIST_FILE = "ChirpRadio-Info.plist";
 				PRODUCT_NAME = ChirpRadio;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18E9E4BE-6764-4E29-99FD-56118AD5131F";
 			};
 			name = Debug;
 		};
