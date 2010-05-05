@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class ChirpRadioViewController;
+@class RootViewController;
 
 @interface ChirpRadioAppDelegate : NSObject <UIApplicationDelegate> {
   UIWindow *window;
-  ChirpRadioViewController *viewController;
+  RootViewController *rootViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet ChirpRadioViewController *viewController;
+@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
 
 @end
 

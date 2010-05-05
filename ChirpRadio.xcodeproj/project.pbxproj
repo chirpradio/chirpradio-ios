@@ -15,6 +15,10 @@
 		2899E5220DE3E06400AC0155 /* ChirpRadioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ChirpRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */; };
+		5208F4F21191EA6100B45F78 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208F4F01191EA6100B45F78 /* RootViewController.m */; };
+		5208F4F31191EA6100B45F78 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5208F4F11191EA6100B45F78 /* RootViewController.xib */; };
+		5208F52E1191EDCB00B45F78 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208F52C1191EDCB00B45F78 /* InfoViewController.m */; };
+		5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5208F52D1191EDCB00B45F78 /* InfoViewController.xib */; };
 		524FBA14117026C300EE8511 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 524FBA13117026C300EE8511 /* AudioStreamer.m */; };
 		524FBA17117026DE00EE8511 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524FBA16117026DE00EE8511 /* CFNetwork.framework */; };
 		524FBA1B117026E900EE8511 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524FBA1A117026E900EE8511 /* AudioToolbox.framework */; };
@@ -46,6 +50,12 @@
 		28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChirpRadioViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ChirpRadio_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChirpRadio_Prefix.pch; sourceTree = "<group>"; };
+		5208F4EF1191EA6100B45F78 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		5208F4F01191EA6100B45F78 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		5208F4F11191EA6100B45F78 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Classes/RootViewController.xib; sourceTree = "<group>"; };
+		5208F52B1191EDCB00B45F78 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		5208F52C1191EDCB00B45F78 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		5208F52D1191EDCB00B45F78 /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoViewController.xib; path = Classes/InfoViewController.xib; sourceTree = "<group>"; };
 		524FBA12117026C200EE8511 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
 		524FBA13117026C300EE8511 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
 		524FBA16117026DE00EE8511 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -90,12 +100,16 @@
 			children = (
 				524FBA12117026C200EE8511 /* AudioStreamer.h */,
 				524FBA13117026C300EE8511 /* AudioStreamer.m */,
-				1D3623240D0F684500981E51 /* ChirpRadioAppDelegate.h */,
-				1D3623250D0F684500981E51 /* ChirpRadioAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* ChirpRadioViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */,
 				52A8BA5B118327D00028E6A5 /* Reachability.h */,
 				52A8BA5C118327D00028E6A5 /* Reachability.m */,
+				1D3623240D0F684500981E51 /* ChirpRadioAppDelegate.h */,
+				1D3623250D0F684500981E51 /* ChirpRadioAppDelegate.m */,
+				5208F4EF1191EA6100B45F78 /* RootViewController.h */,
+				5208F4F01191EA6100B45F78 /* RootViewController.m */,
+				28D7ACF60DDB3853001CB0EB /* ChirpRadioViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */,
+				5208F52B1191EDCB00B45F78 /* InfoViewController.h */,
+				5208F52C1191EDCB00B45F78 /* InfoViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -132,6 +146,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				5208F4F11191EA6100B45F78 /* RootViewController.xib */,
+				2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */,
+				5208F52D1191EDCB00B45F78 /* InfoViewController.xib */,
+				8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */,
+				525FAFB0118CB26C004C6C9E /* Entitlements.plist */,
 				5258D4CB1191BD52009B083E /* app-bg-info.png */,
 				5258D4CC1191BD52009B083E /* app-bg-noinfo.png */,
 				5258D4CD1191BD52009B083E /* app-icon-50.png */,
@@ -141,10 +161,6 @@
 				5273876411728FDB00C194D8 /* controlsBackground.png */,
 				5280CE101172D21600C03044 /* playButton.png */,
 				5280CE291172D38A00C03044 /* pauseButton.png */,
-				2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */,
-				525FAFB0118CB26C004C6C9E /* Entitlements.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -217,6 +233,8 @@
 				5258D4D41191BD52009B083E /* app-icon-57.png in Resources */,
 				5258D4D51191BD52009B083E /* app-icon-72.png in Resources */,
 				5258D4D61191BD52009B083E /* app-icon-512.png in Resources */,
+				5208F4F31191EA6100B45F78 /* RootViewController.xib in Resources */,
+				5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +250,8 @@
 				28D7ACF80DDB3853001CB0EB /* ChirpRadioViewController.m in Sources */,
 				524FBA14117026C300EE8511 /* AudioStreamer.m in Sources */,
 				52A8BA5D118327D00028E6A5 /* Reachability.m in Sources */,
+				5208F4F21191EA6100B45F78 /* RootViewController.m in Sources */,
+				5208F52E1191EDCB00B45F78 /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

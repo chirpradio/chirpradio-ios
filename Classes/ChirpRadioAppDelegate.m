@@ -7,18 +7,18 @@
 //
 
 #import "ChirpRadioAppDelegate.h"
-#import "ChirpRadioViewController.h"
+#import "RootViewController.h"
 
 @implementation ChirpRadioAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+@synthesize rootViewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
   // Override point for customization after app launch
-  [window addSubview:viewController.view];
+  [window addSubview:rootViewController.view];
   [window makeKeyAndVisible];
 
   return YES;
@@ -26,7 +26,7 @@
 
 
 - (void)dealloc {
-  [viewController release];
+  [rootViewController release];
   [window release];
   [super dealloc];
 }
