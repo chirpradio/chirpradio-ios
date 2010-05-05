@@ -41,16 +41,16 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIViewController" id="707293977">
-				<object class="IBUIView" key="IBUIView" id="809005951">
+				<object class="IBUIView" key="IBUIView" id="755430557">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">274</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIButton" id="35594693">
-							<reference key="NSNextResponder" ref="809005951"/>
+						<object class="IBUIButton" id="418150823">
+							<reference key="NSNextResponder" ref="755430557"/>
 							<int key="NSvFlags">292</int>
-							<string key="NSFrame">{{284, 16}, {19, 19}}</string>
-							<reference key="NSSuperview" ref="809005951"/>
+							<string key="NSFrame">{{281, 318}, {19, 19}}</string>
+							<reference key="NSSuperview" ref="755430557"/>
 							<bool key="IBUIOpaque">NO</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							<int key="IBUIContentHorizontalAlignment">0</int>
@@ -138,7 +138,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">switchViews:</string>
-						<reference key="source" ref="35594693"/>
+						<reference key="source" ref="418150823"/>
 						<reference key="destination" ref="707293977"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -181,23 +181,23 @@
 						<reference key="object" ref="707293977"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="809005951"/>
+							<reference ref="755430557"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
-						<reference key="object" ref="809005951"/>
+						<reference key="object" ref="755430557"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="35594693"/>
+							<reference ref="418150823"/>
 						</object>
 						<reference key="parent" ref="707293977"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
-						<reference key="object" ref="35594693"/>
-						<reference key="parent" ref="809005951"/>
+						<reference key="object" ref="418150823"/>
+						<reference key="parent" ref="755430557"/>
 					</object>
 				</object>
 			</object>
