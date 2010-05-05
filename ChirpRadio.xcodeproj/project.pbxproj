@@ -16,7 +16,6 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ChirpRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */; };
 		5208F4F21191EA6100B45F78 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208F4F01191EA6100B45F78 /* RootViewController.m */; };
-		5208F4F31191EA6100B45F78 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5208F4F11191EA6100B45F78 /* RootViewController.xib */; };
 		5208F52E1191EDCB00B45F78 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208F52C1191EDCB00B45F78 /* InfoViewController.m */; };
 		5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5208F52D1191EDCB00B45F78 /* InfoViewController.xib */; };
 		5208F5861192009200B45F78 /* info_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5208F5851192009200B45F78 /* info_small.png */; };
@@ -53,7 +52,6 @@
 		32CA4F630368D1EE00C91783 /* ChirpRadio_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChirpRadio_Prefix.pch; sourceTree = "<group>"; };
 		5208F4EF1191EA6100B45F78 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5208F4F01191EA6100B45F78 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		5208F4F11191EA6100B45F78 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Classes/RootViewController.xib; sourceTree = "<group>"; };
 		5208F52B1191EDCB00B45F78 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		5208F52C1191EDCB00B45F78 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		5208F52D1191EDCB00B45F78 /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoViewController.xib; path = Classes/InfoViewController.xib; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				5208F4F11191EA6100B45F78 /* RootViewController.xib */,
 				2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */,
 				5208F52D1191EDCB00B45F78 /* InfoViewController.xib */,
 				8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */,
@@ -236,7 +233,6 @@
 				5258D4D41191BD52009B083E /* app-icon-57.png in Resources */,
 				5258D4D51191BD52009B083E /* app-icon-72.png in Resources */,
 				5258D4D61191BD52009B083E /* app-icon-512.png in Resources */,
-				5208F4F31191EA6100B45F78 /* RootViewController.xib in Resources */,
 				5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */,
 				5208F5861192009200B45F78 /* info_small.png in Resources */,
 			);
