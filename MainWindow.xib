@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="18"/>
+			<integer value="22"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -41,16 +41,16 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIViewController" id="707293977">
-				<object class="IBUIView" key="IBUIView" id="790686432">
+				<object class="IBUIView" key="IBUIView" id="809005951">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">274</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIButton" id="467633415">
-							<reference key="NSNextResponder" ref="790686432"/>
+						<object class="IBUIButton" id="35594693">
+							<reference key="NSNextResponder" ref="809005951"/>
 							<int key="NSvFlags">292</int>
-							<string key="NSFrame">{{239, 13}, {72, 37}}</string>
-							<reference key="NSSuperview" ref="790686432"/>
+							<string key="NSFrame">{{284, 16}, {19, 19}}</string>
+							<reference key="NSSuperview" ref="809005951"/>
 							<bool key="IBUIOpaque">NO</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							<int key="IBUIContentHorizontalAlignment">0</int>
@@ -60,7 +60,6 @@
 								<double key="NSSize">15</double>
 								<int key="NSfFlags">16</int>
 							</object>
-							<int key="IBUIButtonType">1</int>
 							<object class="NSColor" key="IBUIHighlightedTitleColor">
 								<int key="NSColorSpace">3</int>
 								<bytes key="NSWhite">MQA</bytes>
@@ -72,6 +71,10 @@
 							<object class="NSColor" key="IBUINormalTitleShadowColor">
 								<int key="NSColorSpace">3</int>
 								<bytes key="NSWhite">MC41AA</bytes>
+							</object>
+							<object class="NSCustomResource" key="IBUINormalImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">info_small.png</string>
 							</object>
 						</object>
 					</object>
@@ -135,7 +138,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">switchViews:</string>
-						<reference key="source" ref="467633415"/>
+						<reference key="source" ref="35594693"/>
 						<reference key="destination" ref="707293977"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -178,23 +181,23 @@
 						<reference key="object" ref="707293977"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="790686432"/>
+							<reference ref="809005951"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
-						<reference key="object" ref="790686432"/>
+						<reference key="object" ref="809005951"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="467633415"/>
+							<reference ref="35594693"/>
 						</object>
 						<reference key="parent" ref="707293977"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
-						<reference key="object" ref="467633415"/>
-						<reference key="parent" ref="790686432"/>
+						<reference key="object" ref="35594693"/>
+						<reference key="parent" ref="809005951"/>
 					</object>
 				</object>
 			</object>
@@ -221,7 +224,7 @@
 					<string>{{525, 346}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>RootViewController</string>
-					<string>{{329, 319}, {320, 480}}</string>
+					<string>{{232, 273}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -245,7 +248,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">24</int>
+			<int key="maxID">25</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -526,6 +529,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">ChirpRadio.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">info_small.png</string>
+			<string key="NS.object.0">{19, 19}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">87</string>
 	</data>
 </archive>
