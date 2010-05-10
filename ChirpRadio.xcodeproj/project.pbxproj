@@ -28,9 +28,9 @@
 		5258D4D41191BD52009B083E /* app-icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CE1191BD52009B083E /* app-icon-57.png */; };
 		5258D4D51191BD52009B083E /* app-icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CF1191BD52009B083E /* app-icon-72.png */; };
 		525FAFB1118CB26C004C6C9E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 525FAFB0118CB26C004C6C9E /* Entitlements.plist */; };
-		5269A5A3119252CF00FC97F1 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 5269A5A2119252CF00FC97F1 /* iTunesArtwork */; };
 		5273876511728FDB00C194D8 /* controlsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5273876411728FDB00C194D8 /* controlsBackground.png */; };
 		527387C71172AEA800C194D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527387C61172AEA800C194D8 /* MediaPlayer.framework */; };
+		527AF60B119861A9002C6F8D /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 527AF60A119861A9002C6F8D /* iTunesArtwork */; };
 		5280CE121172D21600C03044 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE101172D21600C03044 /* playButton.png */; };
 		5280CE2A1172D38A00C03044 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE291172D38A00C03044 /* pauseButton.png */; };
 		52A8BA5A1183277B0028E6A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */; };
@@ -66,9 +66,9 @@
 		5258D4CE1191BD52009B083E /* app-icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-57.png"; sourceTree = "<group>"; };
 		5258D4CF1191BD52009B083E /* app-icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-72.png"; sourceTree = "<group>"; };
 		525FAFB0118CB26C004C6C9E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		5269A5A2119252CF00FC97F1 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		5273876411728FDB00C194D8 /* controlsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controlsBackground.png; sourceTree = "<group>"; };
 		527387C61172AEA800C194D8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		527AF60A119861A9002C6F8D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		5280CE101172D21600C03044 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		5280CE291172D38A00C03044 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
 		52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -146,12 +146,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				527AF60A119861A9002C6F8D /* iTunesArtwork */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */,
 				5208F52D1191EDCB00B45F78 /* InfoViewController.xib */,
 				8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */,
 				525FAFB0118CB26C004C6C9E /* Entitlements.plist */,
-				5269A5A2119252CF00FC97F1 /* iTunesArtwork */,
 				5258D4CB1191BD52009B083E /* app-bg-info.png */,
 				5258D4CC1191BD52009B083E /* app-bg-noinfo.png */,
 				5258D4CD1191BD52009B083E /* app-icon-50.png */,
@@ -234,7 +234,7 @@
 				5258D4D51191BD52009B083E /* app-icon-72.png in Resources */,
 				5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */,
 				5208F5861192009200B45F78 /* info_small.png in Resources */,
-				5269A5A3119252CF00FC97F1 /* iTunesArtwork in Resources */,
+				527AF60B119861A9002C6F8D /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -285,6 +284,7 @@
 				GCC_PREFIX_HEADER = ChirpRadio_Prefix.pch;
 				INFOPLIST_FILE = "ChirpRadio-Info.plist";
 				PRODUCT_NAME = ChirpRadio;
+				SDKROOT = iphoneos3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
