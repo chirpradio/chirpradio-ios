@@ -1,11 +1,3 @@
-//
-//  WebViewController.h
-//  Views
-//
-//  Created by John M. Carlin on 5/14/10.
-//  Copyright 2010 SD2 Interactive, Inc. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 

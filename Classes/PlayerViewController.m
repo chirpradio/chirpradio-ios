@@ -1,19 +1,11 @@
-//
-//  ChirpRadioViewController.m
-//  ChirpRadio
-//
-//  Created by John M. Carlin on 4/9/10.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
-//
-
-#import "ChirpRadioViewController.h"
+#import "PlayerViewController.h"
 #import "InfoViewController.h"
 #import "AudioStreamer.h"
 #import <CFNetwork/CFNetwork.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "Reachability.h"
 
-@implementation ChirpRadioViewController
+@implementation PlayerViewController
 
 @synthesize volumeSlider;
 @synthesize playbackButton;
@@ -159,6 +151,5 @@
   [self presentModalViewController:infoController animated:YES];
   [infoController release];
 }
-
 
 @end

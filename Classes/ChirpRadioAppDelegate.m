@@ -1,11 +1,3 @@
-//
-//  ChirpRadioAppDelegate.m
-//  ChirpRadio
-//
-//  Created by John M. Carlin on 4/9/10.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
-//
-
 #import "ChirpRadioAppDelegate.h"
 #import "RootViewController.h"
 
@@ -16,8 +8,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-
-  // Override point for customization after app launch
   [window addSubview:rootViewController.view];
   [window makeKeyAndVisible];
 

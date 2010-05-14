@@ -12,9 +12,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		2899E5220DE3E06400AC0155 /* ChirpRadioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */; };
+		2899E5220DE3E06400AC0155 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* PlayerViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		28D7ACF80DDB3853001CB0EB /* ChirpRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */; };
+		28D7ACF80DDB3853001CB0EB /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* PlayerViewController.m */; };
 		52052F9A119DC841007B6EAC /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52052F99119DC841007B6EAC /* WebViewController.m */; };
 		52052F9C119DC85E007B6EAC /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52052F9B119DC85E007B6EAC /* WebViewController.xib */; };
 		52053007119DD0F5007B6EAC /* back_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 52053005119DD0F5007B6EAC /* back_small.png */; };
@@ -48,10 +48,10 @@
 		1D6058910D05DD3D006BFB54 /* ChirpRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChirpRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChirpRadioViewController.xib; sourceTree = "<group>"; };
+		2899E5210DE3E06400AC0155 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		28D7ACF60DDB3853001CB0EB /* ChirpRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChirpRadioViewController.h; sourceTree = "<group>"; };
-		28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChirpRadioViewController.m; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ChirpRadio_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChirpRadio_Prefix.pch; sourceTree = "<group>"; };
 		52052F98119DC841007B6EAC /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 				1D3623250D0F684500981E51 /* ChirpRadioAppDelegate.m */,
 				5208F4EF1191EA6100B45F78 /* RootViewController.h */,
 				5208F4F01191EA6100B45F78 /* RootViewController.m */,
-				28D7ACF60DDB3853001CB0EB /* ChirpRadioViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* ChirpRadioViewController.m */,
+				28D7ACF60DDB3853001CB0EB /* PlayerViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* PlayerViewController.m */,
 				5208F52B1191EDCB00B45F78 /* InfoViewController.h */,
 				5208F52C1191EDCB00B45F78 /* InfoViewController.m */,
 				52052F98119DC841007B6EAC /* WebViewController.h */,
@@ -159,7 +159,7 @@
 			children = (
 				527AF60A119861A9002C6F8D /* iTunesArtwork */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				2899E5210DE3E06400AC0155 /* ChirpRadioViewController.xib */,
+				2899E5210DE3E06400AC0155 /* PlayerViewController.xib */,
 				5208F52D1191EDCB00B45F78 /* InfoViewController.xib */,
 				52052F9B119DC85E007B6EAC /* WebViewController.xib */,
 				8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */,
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				2899E5220DE3E06400AC0155 /* ChirpRadioViewController.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* PlayerViewController.xib in Resources */,
 				5273876511728FDB00C194D8 /* controlsBackground.png in Resources */,
 				5280CE121172D21600C03044 /* playButton.png in Resources */,
 				5280CE2A1172D38A00C03044 /* pauseButton.png in Resources */,
@@ -264,7 +264,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ChirpRadioAppDelegate.m in Sources */,
-				28D7ACF80DDB3853001CB0EB /* ChirpRadioViewController.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* PlayerViewController.m in Sources */,
 				524FBA14117026C300EE8511 /* AudioStreamer.m in Sources */,
 				52A8BA5D118327D00028E6A5 /* Reachability.m in Sources */,
 				5208F4F21191EA6100B45F78 /* RootViewController.m in Sources */,

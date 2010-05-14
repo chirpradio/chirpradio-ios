@@ -1,11 +1,3 @@
-//
-//  WebViewController.m
-//  Views
-//
-//  Created by John M. Carlin on 5/14/10.
-//  Copyright 2010 SD2 Interactive, Inc. All rights reserved.
-//
-
 #import "WebViewController.h"
 
 
@@ -24,22 +16,19 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+  [super didReceiveMemoryWarning];
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+  [super viewDidUnload];
 }
 
 
 - (void)dealloc {
   _webView.delegate = nil;
   [_webView release];
+  [backButton release];
+  [forwardButton release];
   [super dealloc];
 }
 
