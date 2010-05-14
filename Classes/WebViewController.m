@@ -8,6 +8,7 @@
 @synthesize forwardButton;
 
 - (void)viewDidLoad {
+  app = [UIApplication sharedApplication];
   _webView.delegate = self;
   _webView.scalesPageToFit = YES;
   [backButton setEnabled:NO];
@@ -39,9 +40,12 @@
 #pragma mark -
 #pragma mark Web View Delegate Methods
 
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+  app.networkActivityIndicatorVisible = YES;
+}
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  app.networkActivityIndicatorVisible = NO;
   [backButton setEnabled:[webView canGoBack]];
   [forwardButton setEnabled:[webView canGoForward]];
 }

@@ -5,6 +5,7 @@
   UIWebView *_webView;
   UIBarButtonItem *backButton;
   UIBarButtonItem *forwardButton;
+  UIApplication *app;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *_webView;
