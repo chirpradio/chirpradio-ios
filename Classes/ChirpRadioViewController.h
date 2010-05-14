@@ -10,6 +10,7 @@
 
 @class AudioStreamer;
 @class Reachability;
+@class InfoViewController;
 
 @interface ChirpRadioViewController : UIViewController {
   AudioStreamer *streamer;
@@ -27,6 +28,8 @@
 - (void)createStreamer;
 - (void)alertNoConnection;
 - (void)updateInterfaceWithReachability:curReach;
+
+- (IBAction)showInfoView:(id)sender;
 
 @end
 

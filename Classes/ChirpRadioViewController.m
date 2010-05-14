@@ -7,6 +7,7 @@
 //
 
 #import "ChirpRadioViewController.h"
+#import "InfoViewController.h"
 #import "AudioStreamer.h"
 #import <CFNetwork/CFNetwork.h>
 #import <MediaPlayer/MediaPlayer.h>
@@ -151,5 +152,13 @@
   [self createStreamer];
   [streamer start];
 }
+
+- (IBAction)showInfoView:(id)sender {
+  InfoViewController *infoController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
+  infoController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+  [self presentModalViewController:infoController animated:YES];
+  [infoController release];
+}
+
 
 @end

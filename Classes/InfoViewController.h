@@ -13,7 +13,7 @@
   
 }
 
-//- (IBAction)dismissInfoView:(id)sender;
+- (IBAction)dismissInfoView:(id)sender;
 - (IBAction)showWebView:(id)sender;
 
 @end

@@ -42,4 +42,7 @@
   [webController release];
 }
 
+- (IBAction)dismissInfoView:(id)sender {
+  [self dismissModalViewControllerAnimated:YES];
+}
 @end
