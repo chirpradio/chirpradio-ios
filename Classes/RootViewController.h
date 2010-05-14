@@ -9,16 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class ChirpRadioViewController;
-@class InfoViewController;
 
 @interface RootViewController : UIViewController {
   ChirpRadioViewController *radioViewController;
-  InfoViewController *infoViewController;
 }
 
 @property (nonatomic, retain) ChirpRadioViewController *radioViewController;
-@property (nonatomic, retain) InfoViewController *infoViewController;
-
--(IBAction)switchViews:(id)sender;
 
 @end
