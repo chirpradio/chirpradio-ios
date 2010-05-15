@@ -57,6 +57,21 @@
 							<string key="NSResourceName">app-bg-noinfo.png</string>
 						</object>
 					</object>
+					<object class="IBUIImageView" id="681469539">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{0, 364}, {320, 96}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">4</int>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">controlsBackground.png</string>
+						</object>
+					</object>
 					<object class="IBUIButton" id="61989573">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
@@ -206,6 +221,7 @@
 							<reference ref="687614359"/>
 							<reference ref="325523140"/>
 							<reference ref="367599640"/>
+							<reference ref="681469539"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -217,6 +233,9 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
 						<reference key="object" ref="687614359"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -227,6 +246,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
 						<reference key="object" ref="367599640"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">26</int>
+						<reference key="object" ref="681469539"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</object>
@@ -270,7 +294,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">24</int>
+			<int key="maxID">26</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -533,11 +557,13 @@
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>app-bg-noinfo.png</string>
+				<string>controlsBackground.png</string>
 				<string>playButton.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{320, 460}</string>
+				<string>{320, 96}</string>
 				<string>{28, 28}</string>
 			</object>
 		</object>
