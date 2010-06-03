@@ -34,7 +34,6 @@
 		525FAFB1118CB26C004C6C9E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 525FAFB0118CB26C004C6C9E /* Entitlements.plist */; };
 		5273876511728FDB00C194D8 /* controlsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5273876411728FDB00C194D8 /* controlsBackground.png */; };
 		527387C71172AEA800C194D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527387C61172AEA800C194D8 /* MediaPlayer.framework */; };
-		527AF60B119861A9002C6F8D /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 527AF60A119861A9002C6F8D /* iTunesArtwork */; };
 		5280CE121172D21600C03044 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE101172D21600C03044 /* playButton.png */; };
 		5280CE2A1172D38A00C03044 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE291172D38A00C03044 /* pauseButton.png */; };
 		52A8BA5A1183277B0028E6A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */; };
@@ -77,7 +76,6 @@
 		525FAFB0118CB26C004C6C9E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		5273876411728FDB00C194D8 /* controlsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controlsBackground.png; sourceTree = "<group>"; };
 		527387C61172AEA800C194D8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		527AF60A119861A9002C6F8D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		5280CE101172D21600C03044 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		5280CE291172D38A00C03044 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
 		52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -157,7 +155,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				527AF60A119861A9002C6F8D /* iTunesArtwork */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				2899E5210DE3E06400AC0155 /* PlayerViewController.xib */,
 				5208F52D1191EDCB00B45F78 /* InfoViewController.xib */,
@@ -248,7 +245,6 @@
 				5258D4D51191BD52009B083E /* app-icon-72.png in Resources */,
 				5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */,
 				5208F5861192009200B45F78 /* info_small.png in Resources */,
-				527AF60B119861A9002C6F8D /* iTunesArtwork in Resources */,
 				52052F9C119DC85E007B6EAC /* WebViewController.xib in Resources */,
 				52053007119DD0F5007B6EAC /* back_small.png in Resources */,
 				52053008119DD0F5007B6EAC /* forward_small.png in Resources */,
@@ -297,11 +293,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ChirpRadio_Prefix.pch;
 				INFOPLIST_FILE = "ChirpRadio-Info.plist";
 				PRODUCT_NAME = ChirpRadio;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -357,12 +355,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = Release;
