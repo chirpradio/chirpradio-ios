@@ -15,8 +15,16 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-  [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-  [self becomeFirstResponder];
+  UIDevice* device = [UIDevice currentDevice];
+  BOOL hasMultitasking = NO;
+  if ([device respondsToSelector:@selector(isMultitaskingSupported)]) {
+    hasMultitasking = device.multitaskingSupported;
+  }
+  
+  if (hasMultitasking) {
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+  }
 }
 
 
