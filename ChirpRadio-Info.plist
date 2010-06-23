@@ -29,6 +29,10 @@
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 	<key>SBUsesNetwork</key>
-	<true/>
+	<false/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>

@@ -5,6 +5,27 @@
 
 @synthesize radioViewController;
 
+- (BOOL)canBecomeFirstResponder {
+  return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+  [self becomeFirstResponder];
+}
+
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+  switch (event.subtype) {
+    case UIEventSubtypeRemoteControlTogglePlayPause:
+      NSLog(@"toggle play/pause");
+      break;
+    default:
+      NSLog(@"some mystery button pressed");
+      break;
+  }
+}
+
 - (void)viewDidLoad {
   PlayerViewController *radioController = [[PlayerViewController alloc]
                                                initWithNibName:@"PlayerViewController" bundle:nil];
