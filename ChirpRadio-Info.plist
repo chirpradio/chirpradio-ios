@@ -9,7 +9,15 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>app-icon-57.png</string>
+	<string>iPhoneAppIcon.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>iPadAppIcon.png</string>
+		<string>iPhoneAppIcon.png</string>
+		<string>iPhoneAppIcon@2x.png</string>
+		<string>SettingsIcon.png</string>
+		<string>SettingsIcon@2x.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>org.chicagoindependentradio.chirpradio-v1</string>
 	<key>CFBundleInfoDictionaryVersion</key>

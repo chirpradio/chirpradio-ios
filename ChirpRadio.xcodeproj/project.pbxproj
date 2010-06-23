@@ -27,14 +27,18 @@
 		524FBA1B117026E900EE8511 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524FBA1A117026E900EE8511 /* AudioToolbox.framework */; };
 		5258D4D11191BD52009B083E /* app-bg-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CB1191BD52009B083E /* app-bg-info.png */; };
 		5258D4D21191BD52009B083E /* app-bg-noinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CC1191BD52009B083E /* app-bg-noinfo.png */; };
-		5258D4D31191BD52009B083E /* app-icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CD1191BD52009B083E /* app-icon-50.png */; };
-		5258D4D41191BD52009B083E /* app-icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CE1191BD52009B083E /* app-icon-57.png */; };
-		5258D4D51191BD52009B083E /* app-icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CF1191BD52009B083E /* app-icon-72.png */; };
+		5258D4D31191BD52009B083E /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CD1191BD52009B083E /* SettingsIcon.png */; };
+		5258D4D41191BD52009B083E /* iPhoneAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CE1191BD52009B083E /* iPhoneAppIcon.png */; };
+		5258D4D51191BD52009B083E /* iPadAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5258D4CF1191BD52009B083E /* iPadAppIcon.png */; };
 		525FAFB1118CB26C004C6C9E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 525FAFB0118CB26C004C6C9E /* Entitlements.plist */; };
 		5273876511728FDB00C194D8 /* controlsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5273876411728FDB00C194D8 /* controlsBackground.png */; };
 		527387C71172AEA800C194D8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527387C61172AEA800C194D8 /* MediaPlayer.framework */; };
 		5280CE121172D21600C03044 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE101172D21600C03044 /* playButton.png */; };
 		5280CE2A1172D38A00C03044 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280CE291172D38A00C03044 /* pauseButton.png */; };
+		528D6EF811D1C971005E2860 /* app-bg-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528D6EF611D1C971005E2860 /* app-bg-info@2x.png */; };
+		528D6EF911D1C971005E2860 /* app-bg-noinfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528D6EF711D1C971005E2860 /* app-bg-noinfo@2x.png */; };
+		528D6F0211D1D52F005E2860 /* SettingsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528D6EFF11D1D52F005E2860 /* SettingsIcon@2x.png */; };
+		528D6F0311D1D52F005E2860 /* iPhoneAppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528D6F0011D1D52F005E2860 /* iPhoneAppIcon@2x.png */; };
 		52A8BA5A1183277B0028E6A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */; };
 		52A8BA5D118327D00028E6A5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A8BA5C118327D00028E6A5 /* Reachability.m */; };
 /* End PBXBuildFile section */
@@ -67,14 +71,18 @@
 		524FBA1A117026E900EE8511 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5258D4CB1191BD52009B083E /* app-bg-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-bg-info.png"; sourceTree = "<group>"; };
 		5258D4CC1191BD52009B083E /* app-bg-noinfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-bg-noinfo.png"; sourceTree = "<group>"; };
-		5258D4CD1191BD52009B083E /* app-icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-50.png"; sourceTree = "<group>"; };
-		5258D4CE1191BD52009B083E /* app-icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-57.png"; sourceTree = "<group>"; };
-		5258D4CF1191BD52009B083E /* app-icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-72.png"; sourceTree = "<group>"; };
+		5258D4CD1191BD52009B083E /* SettingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsIcon.png; sourceTree = "<group>"; };
+		5258D4CE1191BD52009B083E /* iPhoneAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneAppIcon.png; sourceTree = "<group>"; };
+		5258D4CF1191BD52009B083E /* iPadAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadAppIcon.png; sourceTree = "<group>"; };
 		525FAFB0118CB26C004C6C9E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		5273876411728FDB00C194D8 /* controlsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controlsBackground.png; sourceTree = "<group>"; };
 		527387C61172AEA800C194D8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		5280CE101172D21600C03044 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		5280CE291172D38A00C03044 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
+		528D6EF611D1C971005E2860 /* app-bg-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-bg-info@2x.png"; sourceTree = "<group>"; };
+		528D6EF711D1C971005E2860 /* app-bg-noinfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-bg-noinfo@2x.png"; sourceTree = "<group>"; };
+		528D6EFF11D1D52F005E2860 /* SettingsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SettingsIcon@2x.png"; sourceTree = "<group>"; };
+		528D6F0011D1D52F005E2860 /* iPhoneAppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneAppIcon@2x.png"; sourceTree = "<group>"; };
 		52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		52A8BA5B118327D00028E6A5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		52A8BA5C118327D00028E6A5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -157,10 +165,14 @@
 				8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */,
 				525FAFB0118CB26C004C6C9E /* Entitlements.plist */,
 				5258D4CB1191BD52009B083E /* app-bg-info.png */,
+				528D6EF611D1C971005E2860 /* app-bg-info@2x.png */,
 				5258D4CC1191BD52009B083E /* app-bg-noinfo.png */,
-				5258D4CD1191BD52009B083E /* app-icon-50.png */,
-				5258D4CE1191BD52009B083E /* app-icon-57.png */,
-				5258D4CF1191BD52009B083E /* app-icon-72.png */,
+				528D6EF711D1C971005E2860 /* app-bg-noinfo@2x.png */,
+				5258D4CE1191BD52009B083E /* iPhoneAppIcon.png */,
+				528D6F0011D1D52F005E2860 /* iPhoneAppIcon@2x.png */,
+				5258D4CD1191BD52009B083E /* SettingsIcon.png */,
+				528D6EFF11D1D52F005E2860 /* SettingsIcon@2x.png */,
+				5258D4CF1191BD52009B083E /* iPadAppIcon.png */,
 				52053005119DD0F5007B6EAC /* back_small.png */,
 				52053006119DD0F5007B6EAC /* forward_small.png */,
 				5208F5851192009200B45F78 /* info_small.png */,
@@ -235,14 +247,18 @@
 				525FAFB1118CB26C004C6C9E /* Entitlements.plist in Resources */,
 				5258D4D11191BD52009B083E /* app-bg-info.png in Resources */,
 				5258D4D21191BD52009B083E /* app-bg-noinfo.png in Resources */,
-				5258D4D31191BD52009B083E /* app-icon-50.png in Resources */,
-				5258D4D41191BD52009B083E /* app-icon-57.png in Resources */,
-				5258D4D51191BD52009B083E /* app-icon-72.png in Resources */,
+				5258D4D31191BD52009B083E /* SettingsIcon.png in Resources */,
+				5258D4D41191BD52009B083E /* iPhoneAppIcon.png in Resources */,
+				5258D4D51191BD52009B083E /* iPadAppIcon.png in Resources */,
 				5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */,
 				5208F5861192009200B45F78 /* info_small.png in Resources */,
 				52052F9C119DC85E007B6EAC /* WebViewController.xib in Resources */,
 				52053007119DD0F5007B6EAC /* back_small.png in Resources */,
 				52053008119DD0F5007B6EAC /* forward_small.png in Resources */,
+				528D6EF811D1C971005E2860 /* app-bg-info@2x.png in Resources */,
+				528D6EF911D1C971005E2860 /* app-bg-noinfo@2x.png in Resources */,
+				528D6F0211D1D52F005E2860 /* SettingsIcon@2x.png in Resources */,
+				528D6F0311D1D52F005E2860 /* iPhoneAppIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
