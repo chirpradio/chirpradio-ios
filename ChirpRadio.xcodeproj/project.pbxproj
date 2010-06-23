@@ -19,7 +19,6 @@
 		52052F9C119DC85E007B6EAC /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52052F9B119DC85E007B6EAC /* WebViewController.xib */; };
 		52053007119DD0F5007B6EAC /* back_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 52053005119DD0F5007B6EAC /* back_small.png */; };
 		52053008119DD0F5007B6EAC /* forward_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 52053006119DD0F5007B6EAC /* forward_small.png */; };
-		5208F4F21191EA6100B45F78 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208F4F01191EA6100B45F78 /* RootViewController.m */; };
 		5208F52E1191EDCB00B45F78 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208F52C1191EDCB00B45F78 /* InfoViewController.m */; };
 		5208F52F1191EDCB00B45F78 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5208F52D1191EDCB00B45F78 /* InfoViewController.xib */; };
 		5208F5861192009200B45F78 /* info_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5208F5851192009200B45F78 /* info_small.png */; };
@@ -58,8 +57,6 @@
 		52052F9B119DC85E007B6EAC /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		52053005119DD0F5007B6EAC /* back_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_small.png; sourceTree = "<group>"; };
 		52053006119DD0F5007B6EAC /* forward_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_small.png; sourceTree = "<group>"; };
-		5208F4EF1191EA6100B45F78 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		5208F4F01191EA6100B45F78 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5208F52B1191EDCB00B45F78 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		5208F52C1191EDCB00B45F78 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		5208F52D1191EDCB00B45F78 /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoViewController.xib; path = Classes/InfoViewController.xib; sourceTree = "<group>"; };
@@ -111,8 +108,6 @@
 				52A8BA5C118327D00028E6A5 /* Reachability.m */,
 				1D3623240D0F684500981E51 /* ChirpRadioAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ChirpRadioAppDelegate.m */,
-				5208F4EF1191EA6100B45F78 /* RootViewController.h */,
-				5208F4F01191EA6100B45F78 /* RootViewController.m */,
 				28D7ACF60DDB3853001CB0EB /* PlayerViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* PlayerViewController.m */,
 				5208F52B1191EDCB00B45F78 /* InfoViewController.h */,
@@ -263,7 +258,6 @@
 				28D7ACF80DDB3853001CB0EB /* PlayerViewController.m in Sources */,
 				524FBA14117026C300EE8511 /* AudioStreamer.m in Sources */,
 				52A8BA5D118327D00028E6A5 /* Reachability.m in Sources */,
-				5208F4F21191EA6100B45F78 /* RootViewController.m in Sources */,
 				5208F52E1191EDCB00B45F78 /* InfoViewController.m in Sources */,
 				52052F9A119DC841007B6EAC /* WebViewController.m in Sources */,
 			);
