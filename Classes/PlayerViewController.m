@@ -10,6 +10,32 @@
 @synthesize volumeSlider;
 @synthesize playbackButton;
 
+- (BOOL)canBecomeFirstResponder {
+  return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+  [self becomeFirstResponder];
+}
+
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+  switch (event.subtype) {
+    case UIEventSubtypeRemoteControlTogglePlayPause:
+      if ([streamer isPlaying])
+      {
+        [streamer pause];
+      } else {
+        [streamer start];
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+
 - (void)destroyStreamer
 {
   if (streamer)
@@ -102,13 +128,9 @@
   }
 }
 
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+  return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 
 - (void)dealloc {
   [volumeSlider release];

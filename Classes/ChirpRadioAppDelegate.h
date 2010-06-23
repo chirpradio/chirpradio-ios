@@ -1,14 +1,14 @@
 #import <UIKit/UIKit.h>
 
-@class RootViewController;
+@class PlayerViewController;
 
 @interface ChirpRadioAppDelegate : NSObject <UIApplicationDelegate> {
   UIWindow *window;
-  RootViewController *rootViewController;
+  PlayerViewController *playerViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
+@property (nonatomic, retain) IBOutlet PlayerViewController *playerViewController;
 
 @end
 

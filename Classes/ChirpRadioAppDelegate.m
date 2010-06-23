@@ -1,14 +1,14 @@
 #import "ChirpRadioAppDelegate.h"
-#import "RootViewController.h"
+#import "PlayerViewController.h"
 
 @implementation ChirpRadioAppDelegate
 
 @synthesize window;
-@synthesize rootViewController;
+@synthesize playerViewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-  [window addSubview:rootViewController.view];
+  [window addSubview:playerViewController.view];
   [window makeKeyAndVisible];
 
   return YES;
@@ -16,7 +16,7 @@
 
 
 - (void)dealloc {
-  [rootViewController release];
+  [playerViewController release];
   [window release];
   [super dealloc];
 }
