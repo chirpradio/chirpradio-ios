@@ -41,6 +41,8 @@
 		528D6F0311D1D52F005E2860 /* iPhoneAppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528D6F0011D1D52F005E2860 /* iPhoneAppIcon@2x.png */; };
 		52A8BA5A1183277B0028E6A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */; };
 		52A8BA5D118327D00028E6A5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A8BA5C118327D00028E6A5 /* Reachability.m */; };
+		884E21A7150BBAA300C9EB13 /* chirpRadiobackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 884E21A6150BBAA300C9EB13 /* chirpRadiobackground.png */; };
+		8870334214E6E86700764FBF /* Playlist.html in Resources */ = {isa = PBXBuildFile; fileRef = 8870334114E6E86700764FBF /* Playlist.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		52A8BA591183277B0028E6A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		52A8BA5B118327D00028E6A5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		52A8BA5C118327D00028E6A5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		884E21A6150BBAA300C9EB13 /* chirpRadiobackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chirpRadiobackground.png; path = ../../../../Users/imac/Desktop/CHIRP/ChirpiPhoneDev/chirpRadiobackground.png; sourceTree = "<group>"; };
+		8870334114E6E86700764FBF /* Playlist.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Playlist.html; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ChirpRadio-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ChirpRadio-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +170,7 @@
 				525FAFB0118CB26C004C6C9E /* Entitlements.plist */,
 				5258D4CB1191BD52009B083E /* app-bg-info.png */,
 				528D6EF611D1C971005E2860 /* app-bg-info@2x.png */,
+				884E21A6150BBAA300C9EB13 /* chirpRadiobackground.png */,
 				5258D4CC1191BD52009B083E /* app-bg-noinfo.png */,
 				528D6EF711D1C971005E2860 /* app-bg-noinfo@2x.png */,
 				5258D4CE1191BD52009B083E /* iPhoneAppIcon.png */,
@@ -179,6 +184,7 @@
 				5273876411728FDB00C194D8 /* controlsBackground.png */,
 				5280CE101172D21600C03044 /* playButton.png */,
 				5280CE291172D38A00C03044 /* pauseButton.png */,
+				8870334114E6E86700764FBF /* Playlist.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -269,6 +275,8 @@
 				528D6EF911D1C971005E2860 /* app-bg-noinfo@2x.png in Resources */,
 				528D6F0211D1D52F005E2860 /* SettingsIcon@2x.png in Resources */,
 				528D6F0311D1D52F005E2860 /* iPhoneAppIcon@2x.png in Resources */,
+				8870334214E6E86700764FBF /* Playlist.html in Resources */,
+				884E21A7150BBAA300C9EB13 /* chirpRadiobackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

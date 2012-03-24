@@ -9,6 +9,8 @@
 
 @synthesize volumeSlider;
 @synthesize playbackButton;
+@synthesize webView;
+
 
 - (BOOL)canBecomeFirstResponder {
   return YES;
@@ -83,6 +85,7 @@
     [streamer pause];
   } else {
     [streamer start];
+    
   }
 }
 
@@ -112,6 +115,14 @@
     app.networkActivityIndicatorVisible = NO;
   }
 }
+- (void)loadUIWebView
+{
+    webView = [[UIWebView alloc] initWithFrame:self.view.bounds];  //Change self.view.bounds to a smaller CGRect if you don't want it to take up the whole screen
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"www.google.com"]]];
+    [self.view addSubview:webView];
+    [webView release];
+}
+
 
 - (void)alertNoConnection
 {
@@ -144,6 +155,7 @@
   [volumeSlider release];
   [playbackButton release];
   [hostReach release];
+  [webView release];  
   [super dealloc];
 }
 
@@ -166,6 +178,22 @@
 	
 	hostReach = [[Reachability reachabilityWithHostName: @"www.live365.com"] retain];
 	[hostReach startNotifer];
+    
+    /*Playlist code added by Jason Wiggs 3/13/2012 */
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
+    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path];    
+    NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    
+    webView.opaque = NO; 
+    webView.backgroundColor = [UIColor clearColor]; //colorWithWhite:1.0 alpha:0.4];
+
+    [self.webView loadHTMLString:htmlString baseURL:nil];
+
+    timer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
+    
+    [htmlString release];
+    
 
   MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
   [volumeSlider addSubview:volumeView];
@@ -173,6 +201,19 @@
   
   [self createStreamer];
   [streamer start];
+  
+}
+-(void)refresh{//Added by JWiggs to refresh playlist every xx secs
+    
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"JSONstring" ofType:@"html"];
+    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path]; 
+    NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+    
+    webView.opaque = NO; 
+    webView.backgroundColor = [UIColor clearColor];     
+    [self.webView loadHTMLString:htmlString baseURL:nil];
+    [htmlString release];
+    
 }
 
 - (IBAction)showInfoView:(id)sender {

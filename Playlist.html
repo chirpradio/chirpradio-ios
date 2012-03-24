@@ -1,0 +1,123 @@
+<html>
+    <body onload="callChirpJSONP()">
+        <style type="text/css">
+            p1
+            {
+                font-family:"Helvetica";
+                color:#FCFC77;
+                font-size:13px;
+                text-align:left;
+                background-color:#1f1f1f;
+            }
+            p
+            {
+                background-color:#1f1f1f;
+                color:#c3c3c3;
+                font-family:"Helvetica";
+                font-size:13px;
+                padding-top:12px;
+                padding-bottom:12px;
+                padding-left:12px;
+                padding-right:12px;
+                border-top-left-radius:3px;
+                border-top-right-radius:3px;
+                border-bottom-right-radius:3px;
+                border-bottom-left-radius:3px;
+            }
+            p2
+            {
+                color:#c3c3c3;
+                font-size:13px;
+                font-family:"Helvetica";
+            }
+            p3
+            {
+                color:#c3c3c3;
+                font-family:"Helvetica";
+                font-size:13px;
+                padding-top:12px;
+                padding-bottom:12px;
+
+            }
+
+        </style>
+        
+        <script type="text/javascript">
+            
+            function callChirpJSONP()
+            {
+                var url = "http://chirpradio.appspot.com/api/current_playlist?src=src=chirpradio-iphone&jsonp=processResponse";
+                var script = document.createElement("script");
+                script.src = url;
+                document.body.appendChild(script);            
+            }
+            
+            function processResponse(response)
+            {
+             document.getElementById("dj").innerHTML=response.now_playing.dj
+             document.getElementById("artist").innerHTML=response.now_playing.artist      
+             document.getElementById("track").innerHTML=response.now_playing.track
+             document.getElementById("release").innerHTML=response.now_playing.release
+             document.getElementById("label").innerHTML=response.now_playing.label
+             
+             document.getElementById("artist0").innerHTML=response.recently_played[0].artist
+             document.getElementById("track0").innerHTML=response.recently_played[0].track
+             document.getElementById("release0").innerHTML=response.recently_played[0].release
+             document.getElementById("label0").innerHTML=response.recently_played[0].label
+             
+             document.getElementById("artist1").innerHTML=response.recently_played[1].artist
+             document.getElementById("track1").innerHTML=response.recently_played[1].track
+             document.getElementById("release1").innerHTML=response.recently_played[1].release
+             document.getElementById("label1").innerHTML=response.recently_played[1].label
+             
+             document.getElementById("artist2").innerHTML=response.recently_played[2].artist
+             document.getElementById("track2").innerHTML=response.recently_played[2].track
+             document.getElementById("release2").innerHTML=response.recently_played[2].release
+             document.getElementById("label2").innerHTML=response.recently_played[2].label
+             
+             document.getElementById("artist3").innerHTML=response.recently_played[3].artist
+             document.getElementById("track3").innerHTML=response.recently_played[3].track
+             document.getElementById("release3").innerHTML=response.recently_played[3].release
+             document.getElementById("label3").innerHTML=response.recently_played[3].label
+             
+             document.getElementById("artist4").innerHTML=response.recently_played[4].artist
+             document.getElementById("track4").innerHTML=response.recently_played[4].track
+             document.getElementById("release4").innerHTML=response.recently_played[4].release
+             document.getElementById("label4").innerHTML=response.recently_played[4].label
+            }
+        </script>
+        <!--<span onclick="callTheJsonp()">click here to get info</span><br />-->
+        
+        <p>
+        <p1>NOW PLAYING &#183; </p1><p2><b>ON AIR: </b><span id="dj"></span></p2><br /><br />
+        
+        <p3><b><span id="artist"></span></b>&#160;&#45;&#160;<span id="track"></span> from
+        <i><span id="release"></span>
+        &#40;<span id="label"></span>&#41;</i></p3><br />
+        </p>
+        
+        <p>
+        <p1>RECENTLY PLAYED</p1><br />
+        
+        <p3><b><span id="artist0"></span></b>&#160;&#45;&#160;<span id="track0"></span> from
+        <i><span id="release0"></span>
+        &#40;<span id="label0"></span>&#41;</i></p3><br /><br />
+        
+        <p3><b><span id="artist1"></span></b>&#160;&#45;&#160;<span id="track1"></span> from
+        <i><span id="release1"></span>
+        &#40;<span id="label1"></span>&#41;</i></p3><br /><br />
+        
+        <p3><b><span id="artist2"></span></b>&#160;&#45;&#160;<span id="track2"></span> from
+        <i><span id="release2"></span>
+        &#40;<span id="label2"></span>&#41;</i></p3><br /><br />
+        
+        <p3><b><span id="artist3"></span></b>&#160;&#45;&#160;<span id="track3"></span> from
+        <i><span id="release3"></span>
+        &#40;<span id="label3"></span>&#41;</i></p3><br /><br />
+        
+        <p3><b><span id="artist4"></span></b>&#160;&#45;&#160;<span id="track4"></span> from
+        <i><span id="release4"></span>
+        &#40;<span id="label4"></span>&#41;</i></p3><br /><br />
+        </p>
+    </body>
+</html>
