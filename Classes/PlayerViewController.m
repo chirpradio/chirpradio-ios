@@ -189,11 +189,7 @@
     webView.backgroundColor = [UIColor clearColor]; //colorWithWhite:1.0 alpha:0.4];
 
     [self.webView loadHTMLString:htmlString baseURL:nil];
-
-    timer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
-    
-    [htmlString release];
-    
+   
 
   MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
   [volumeSlider addSubview:volumeView];
@@ -201,11 +197,15 @@
   
   [self createStreamer];
   [streamer start];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
+    
+    [htmlString release];
   
 }
 -(void)refresh{//Added by JWiggs to refresh playlist every xx secs
     
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"JSONstring" ofType:@"html"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
     NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path]; 
     NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
     
