@@ -37,12 +37,52 @@
                 font-size:13px;
                 padding-top:12px;
                 padding-bottom:12px;
-
+                
             }
-
-        </style>
+            
+            </style>
         
         <script type="text/javascript">
+            var dj=("<span id='dj'></span>");
+            var artist=("<span id='artist'></span>");
+            var track=("<span id='track'></span>");
+            var release=("<span id='release'></span>");
+            var label=("<span id='label'></span>");
+            
+            var artist0=("<span id='artist0'></span>");
+            var track0=("<span id='track0'></span>");
+            var release0=("<span id='release0'></span>");
+            var label0=("<span id='label0'></span>");
+            
+            var artist1=("<span id='artist1'></span>");
+            var track1=("<span id='track1'></span>");
+            var release1=("<span id='release1'></span>");
+            var label1=("<span id='label1'></span>");
+            
+            var artist2=("<span id='artist2'></span>");
+            var track2=("<span id='track2'></span>");
+            var release2=("<span id='release2'></span>");
+            var label2=("<span id='label2'></span>");
+            
+            var artist3=("<span id='artist3'></span>");
+            var track3=("<span id='track3'></span>");
+            var release3=("<span id='release3'></span>");
+            var label3=("<span id='label3'></span>");
+            
+            var artist4=("<span id='artist4'></span>");
+            var track4=("<span id='track4'></span>");
+            var release4=("<span id='release4'></span>");
+            var label4=("<span id='label4'></span>");
+            
+            document.write("<p><p1>NOW PLAYING &#183; </p1><p2>" + dj + "</p2><br /><br />");
+            document.write("<p3><b>" + artist + "</b>" + track + "<i>" + release + " " + label + "</i></p3><br /></p>");
+            
+            document.write("<p><p1>RECENTLY PLAYED</p1><br />");
+            document.write("<p3><b>" + artist0 + "</b>" + track0 + "<i>" + release0 + " " + label0 + "</i></p3><br /><br />");            
+            document.write("<p3><b>" + artist1 + "</b>" + track1 + "<i>" + release1 + " " + label1 + "</i></p3><br /><br />");
+            document.write("<p3><b>" + artist2 + "</b>" + track2 + "<i>" + release2 + " " + label2 + "</i></p3><br /><br />");
+            document.write("<p3><b>" + artist3 + "</b>" + track3 + "<i>" + release3 + " " + label3 + "</i></p3><br /><br />");
+            document.write("<p3><b>" + artist4 + "</b>" + track4 + "<i>" + release4 + " " + label4 + "</i></p3><br /><br /></p>");
             
             function callChirpJSONP()
             {
@@ -54,70 +94,38 @@
             
             function processResponse(response)
             {
-             document.getElementById("dj").innerHTML=response.now_playing.dj
-             document.getElementById("artist").innerHTML=response.now_playing.artist      
-             document.getElementById("track").innerHTML=response.now_playing.track
-             document.getElementById("release").innerHTML=response.now_playing.release
-             document.getElementById("label").innerHTML=response.now_playing.label
-             
-             document.getElementById("artist0").innerHTML=response.recently_played[0].artist
-             document.getElementById("track0").innerHTML=response.recently_played[0].track
-             document.getElementById("release0").innerHTML=response.recently_played[0].release
-             document.getElementById("label0").innerHTML=response.recently_played[0].label
-             
-             document.getElementById("artist1").innerHTML=response.recently_played[1].artist
-             document.getElementById("track1").innerHTML=response.recently_played[1].track
-             document.getElementById("release1").innerHTML=response.recently_played[1].release
-             document.getElementById("label1").innerHTML=response.recently_played[1].label
-             
-             document.getElementById("artist2").innerHTML=response.recently_played[2].artist
-             document.getElementById("track2").innerHTML=response.recently_played[2].track
-             document.getElementById("release2").innerHTML=response.recently_played[2].release
-             document.getElementById("label2").innerHTML=response.recently_played[2].label
-             
-             document.getElementById("artist3").innerHTML=response.recently_played[3].artist
-             document.getElementById("track3").innerHTML=response.recently_played[3].track
-             document.getElementById("release3").innerHTML=response.recently_played[3].release
-             document.getElementById("label3").innerHTML=response.recently_played[3].label
-             
-             document.getElementById("artist4").innerHTML=response.recently_played[4].artist
-             document.getElementById("track4").innerHTML=response.recently_played[4].track
-             document.getElementById("release4").innerHTML=response.recently_played[4].release
-             document.getElementById("label4").innerHTML=response.recently_played[4].label
-            }
-        </script>
-        <!--<span onclick="callTheJsonp()">click here to get info</span><br />-->
-        
-        <p>
-        <p1>NOW PLAYING &#183; </p1><p2><b>ON AIR: </b><span id="dj"></span></p2><br /><br />
-        
-        <p3><b><span id="artist"></span></b>&#160;&#45;&#160;<span id="track"></span> from
-        <i><span id="release"></span>
-        &#40;<span id="label"></span>&#41;</i></p3><br />
-        </p>
-        
-        <p>
-        <p1>RECENTLY PLAYED</p1><br />
-        
-        <p3><b><span id="artist0"></span></b>&#160;&#45;&#160;<span id="track0"></span> from
-        <i><span id="release0"></span>
-        &#40;<span id="label0"></span>&#41;</i></p3><br /><br />
-        
-        <p3><b><span id="artist1"></span></b>&#160;&#45;&#160;<span id="track1"></span> from
-        <i><span id="release1"></span>
-        &#40;<span id="label1"></span>&#41;</i></p3><br /><br />
-        
-        <p3><b><span id="artist2"></span></b>&#160;&#45;&#160;<span id="track2"></span> from
-        <i><span id="release2"></span>
-        &#40;<span id="label2"></span>&#41;</i></p3><br /><br />
-        
-        <p3><b><span id="artist3"></span></b>&#160;&#45;&#160;<span id="track3"></span> from
-        <i><span id="release3"></span>
-        &#40;<span id="label3"></span>&#41;</i></p3><br /><br />
-        
-        <p3><b><span id="artist4"></span></b>&#160;&#45;&#160;<span id="track4"></span> from
-        <i><span id="release4"></span>
-        &#40;<span id="label4"></span>&#41;</i></p3><br /><br />
-        </p>
+                document.getElementById("dj").innerHTML="<b>ON AIR: </b>"+response.now_playing.dj
+                document.getElementById("artist").innerHTML=response.now_playing.artist      
+                document.getElementById("track").innerHTML="&#160;&#45;&#160;"+response.now_playing.track+" from "
+                document.getElementById("release").innerHTML=response.now_playing.release
+                document.getElementById("label").innerHTML="&#40;"+response.now_playing.label+"&#41;"
+                
+                document.getElementById("artist0").innerHTML=response.recently_played[0].artist
+                document.getElementById("track0").innerHTML="&#160;&#45;&#160;"+response.recently_played[0].track+" from "
+                document.getElementById("release0").innerHTML=response.recently_played[0].release
+                document.getElementById("label0").innerHTML="&#40;"+response.recently_played[0].label+"&#41;"
+                
+                document.getElementById("artist1").innerHTML=response.recently_played[1].artist
+                document.getElementById("track1").innerHTML="&#160;&#45;&#160;"+response.recently_played[1].track+" from "
+                document.getElementById("release1").innerHTML=response.recently_played[1].release
+                document.getElementById("label1").innerHTML="&#40;"+response.recently_played[1].label+"&#41;"
+                
+                document.getElementById("artist2").innerHTML=response.recently_played[2].artist
+                document.getElementById("track2").innerHTML="&#160;&#45;&#160;"+response.recently_played[2].track+" from "
+                document.getElementById("release2").innerHTML=response.recently_played[2].release
+                document.getElementById("label2").innerHTML="&#40;"+response.recently_played[2].label+"&#41;"
+                
+                document.getElementById("artist3").innerHTML=response.recently_played[3].artist
+                document.getElementById("track3").innerHTML="&#160;&#45;&#160;"+response.recently_played[3].track+" from "
+                document.getElementById("release3").innerHTML=response.recently_played[3].release
+                document.getElementById("label3").innerHTML="&#40;"+response.recently_played[3].label+"&#41;"
+                
+                document.getElementById("artist4").innerHTML=response.recently_played[4].artist
+                document.getElementById("track4").innerHTML="&#160;&#45;&#160;"+response.recently_played[4].track+" from "
+                document.getElementById("release4").innerHTML=response.recently_played[4].release
+                document.getElementById("label4").innerHTML="&#40;"+response.recently_played[4].label+"&#41;"
+            }  
+            
+            </script>
     </body>
 </html>
