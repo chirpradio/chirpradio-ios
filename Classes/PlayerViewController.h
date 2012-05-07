@@ -8,14 +8,17 @@
   AudioStreamer *streamer;
   UIView *volumeSlider;
   UIButton *playbackButton;
-  UIWebView *webView;
+  NSMutableData *responseData;
   NSTimer *timer;
   Reachability *hostReach;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *volumeSlider;
 @property (nonatomic, retain) IBOutlet UIButton *playbackButton;
-@property (nonatomic, retain) IBOutlet UIWebView *webView;
+@property (retain, nonatomic) IBOutlet UILabel *djLabel;
+@property (retain, nonatomic) IBOutlet UILabel *nowPlayingArtistLabel;
+@property (retain, nonatomic) IBOutlet UILabel *nowPlayingTrackLabel;
+@property (retain, nonatomic) IBOutlet UILabel *nowPlayingLabelLabel;
 
 - (IBAction)playbackButtonPressed:(id)sender;
 - (void)destroyStreamer;

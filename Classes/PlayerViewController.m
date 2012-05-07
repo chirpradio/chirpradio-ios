@@ -4,12 +4,16 @@
 #import <CFNetwork/CFNetwork.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "Reachability.h"
+#import "JSONKit.h"
 
 @implementation PlayerViewController
+@synthesize djLabel;
+@synthesize nowPlayingArtistLabel;
+@synthesize nowPlayingTrackLabel;
+@synthesize nowPlayingLabelLabel;
 
 @synthesize volumeSlider;
 @synthesize playbackButton;
-@synthesize webView;
 
 
 - (BOOL)canBecomeFirstResponder {
@@ -115,13 +119,6 @@
     app.networkActivityIndicatorVisible = NO;
   }
 }
-- (void)loadUIWebView
-{
-    webView = [[UIWebView alloc] initWithFrame:self.view.bounds];  //Change self.view.bounds to a smaller CGRect if you don't want it to take up the whole screen
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"www.google.com"]]];
-    [self.view addSubview:webView];
-    [webView release];
-}
 
 
 - (void)alertNoConnection
@@ -155,7 +152,11 @@
   [volumeSlider release];
   [playbackButton release];
   [hostReach release];
-  [webView release];  
+//  [webView release];  
+  [djLabel release];
+  [nowPlayingArtistLabel release];
+  [nowPlayingTrackLabel release];
+  [nowPlayingLabelLabel release];
   [super dealloc];
 }
 
@@ -167,6 +168,19 @@
 }
 
 - (void)viewDidUnload {
+  [self setNowPlayingLabelLabel:nil];
+  [self setNowPlayingTrackLabel:nil];
+  [self setNowPlayingArtistLabel:nil];
+  [self setDjLabel:nil];
+}
+
+- (void)requestPlaylist {
+    responseData = [[NSMutableData data] retain];
+    NSString *apiEndpoint = @"http://chirpradio.appspot.com/api/current_playlist?src=src=chirpradio-iphone";
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:apiEndpoint]
+                                             cachePolicy:NSURLRequestUseProtocolCachePolicy 
+                                         timeoutInterval:30.0];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 - (void)viewDidLoad {
@@ -179,41 +193,80 @@
 	hostReach = [[Reachability reachabilityWithHostName: @"www.live365.com"] retain];
 	[hostReach startNotifer];
     
-    /*Playlist code added by Jason Wiggs 3/13/2012 */
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
-    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path];    
-    NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    
-    webView.opaque = NO; 
-    webView.backgroundColor = [UIColor clearColor]; //colorWithWhite:1.0 alpha:0.4];
-
-    [self.webView loadHTMLString:htmlString baseURL:nil];
-   
-
   MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
   [volumeSlider addSubview:volumeView];
   [volumeView sizeToFit];
   
   [self createStreamer];
   [streamer start];
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
-    
-    [htmlString release];
   
+  [self requestPlaylist];
+    
+  timer = [NSTimer scheduledTimerWithTimeInterval:30 
+                                           target:self 
+                                         selector:@selector(requestPlaylist) 
+                                         userInfo:nil 
+                                          repeats:YES];
+    
 }
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	[responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+	[responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+  [responseData release];
+  [connection release];
+  NSString *errorMessage = [NSString stringWithFormat:@"Connection failed: %@", [error description]];
+  NSLog(@"didFaileWithError: %@", errorMessage);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+	[connection release];
+  NSLog(@"connectionDidFinishingLoading");
+  NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+  NSLog(@"responseString: %@", responseString);
+  [responseData release];
+  NSLog(@"-----------------------------------------------");
+  NSDictionary *playlistData = [responseString objectFromJSONString];
+  NSDictionary *nowPlaying = [playlistData objectForKey:@"now_playing"];
+  NSArray *recentlyPlayed = [playlistData objectForKey:@"recently_played"];
+  [djLabel setText:[nowPlaying objectForKey:@"dj"]];
+  [nowPlayingArtistLabel setText:[nowPlaying objectForKey:@"artist"]];
+  [nowPlayingArtistLabel sizeToFit];
+  [nowPlayingTrackLabel setText:[nowPlaying objectForKey:@"track"]];
+  [nowPlayingTrackLabel sizeToFit];
+  [nowPlayingLabelLabel setText:[nowPlaying objectForKey:@"label"]];
+  [nowPlayingLabelLabel sizeToFit];
+  
+  for (NSDictionary *played in recentlyPlayed) {
+    NSLog(@"%@ - %@ (%@)", 
+          [played objectForKey:@"artist"], 
+          [played objectForKey:@"track"], 
+          [played objectForKey:@"label"]);
+  }
+//  NSLog(@"%@", [playlistData description]);
+  NSLog(@"-----------------------------------------------");
+}
+
+
 -(void)refresh{//Added by JWiggs to refresh playlist every xx secs
     
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
-    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path]; 
-    NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    
-    webView.opaque = NO; 
-    webView.backgroundColor = [UIColor clearColor];     
-    [self.webView loadHTMLString:htmlString baseURL:nil];
-    [htmlString release];
-    
+//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
+//    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path]; 
+//    NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+//    
+//    webView.opaque = NO; 
+//    webView.backgroundColor = [UIColor clearColor];     
+//    [self.webView loadHTMLString:htmlString baseURL:nil];
+//    [htmlString release];
+  
+  
+
 }
 
 - (IBAction)showInfoView:(id)sender {
