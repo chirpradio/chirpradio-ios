@@ -246,6 +246,11 @@
   [nowPlayingTrackLabel setText:[nowPlaying objectForKey:@"track"]];
   [nowPlayingLabelLabel setText:[nowPlaying objectForKey:@"release"]];
   
+  [djLabel setHidden:NO];
+  [nowPlayingArtistLabel setHidden:NO];
+  [nowPlayingTrackLabel setHidden:NO];
+  [nowPlayingLabelLabel setHidden:NO];
+  
   [recentlyPlayedTableView reloadData];
 }
 
@@ -286,7 +291,8 @@
     UIColor *darkGray = [UIColor colorWithRed:0.094 green:0.094 blue:0.094 alpha:1.0];
     [cell.contentView setBackgroundColor:darkGray];
     [cell.textLabel setBackgroundColor:darkGray];
-    [cell.textLabel setTextColor:[UIColor lightGrayColor]];
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
+    [cell.detailTextLabel setTextColor:[UIColor whiteColor]];
   }
   
   [self configureCell:cell atIndexPath:indexPath];
