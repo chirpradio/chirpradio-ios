@@ -10,8 +10,9 @@
 @synthesize djLabel;
 @synthesize nowPlayingArtistLabel;
 @synthesize nowPlayingTrackLabel;
+@synthesize recentlyPlayedTableView;
+@synthesize recentlyPlayed;
 @synthesize nowPlayingLabelLabel;
-
 @synthesize volumeSlider;
 @synthesize playbackButton;
 
@@ -48,7 +49,6 @@
       break;
   }
 }
-
 
 - (void)destroyStreamer
 {
@@ -152,11 +152,12 @@
   [volumeSlider release];
   [playbackButton release];
   [hostReach release];
-//  [webView release];  
   [djLabel release];
   [nowPlayingArtistLabel release];
   [nowPlayingTrackLabel release];
   [nowPlayingLabelLabel release];
+  [recentlyPlayedTableView release];
+  [recentlyPlayed release];
   [super dealloc];
 }
 
@@ -168,10 +169,12 @@
 }
 
 - (void)viewDidUnload {
+  [self setRecentlyPlayedTableView:nil];
   [self setNowPlayingLabelLabel:nil];
   [self setNowPlayingTrackLabel:nil];
   [self setNowPlayingArtistLabel:nil];
   [self setDjLabel:nil];
+  [self setRecentlyPlayed:nil];
 }
 
 - (void)requestPlaylist {
@@ -185,6 +188,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  self.recentlyPlayed = nil;
+  [self.recentlyPlayedTableView setSeparatorColor:[UIColor lightGrayColor]];
   
   // Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the
   // method "reachabilityChanged" will be called. 
@@ -227,46 +233,20 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	[connection release];
-  NSLog(@"connectionDidFinishingLoading");
   NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-  NSLog(@"responseString: %@", responseString);
   [responseData release];
-  NSLog(@"-----------------------------------------------");
   NSDictionary *playlistData = [responseString objectFromJSONString];
+  [responseString release];
   NSDictionary *nowPlaying = [playlistData objectForKey:@"now_playing"];
-  NSArray *recentlyPlayed = [playlistData objectForKey:@"recently_played"];
+  
+  self.recentlyPlayed = [NSMutableArray arrayWithArray:[playlistData objectForKey:@"recently_played"]];
+
   [djLabel setText:[nowPlaying objectForKey:@"dj"]];
   [nowPlayingArtistLabel setText:[nowPlaying objectForKey:@"artist"]];
-  [nowPlayingArtistLabel sizeToFit];
   [nowPlayingTrackLabel setText:[nowPlaying objectForKey:@"track"]];
-  [nowPlayingTrackLabel sizeToFit];
-  [nowPlayingLabelLabel setText:[nowPlaying objectForKey:@"label"]];
-  [nowPlayingLabelLabel sizeToFit];
+  [nowPlayingLabelLabel setText:[nowPlaying objectForKey:@"release"]];
   
-  for (NSDictionary *played in recentlyPlayed) {
-    NSLog(@"%@ - %@ (%@)", 
-          [played objectForKey:@"artist"], 
-          [played objectForKey:@"track"], 
-          [played objectForKey:@"label"]);
-  }
-//  NSLog(@"%@", [playlistData description]);
-  NSLog(@"-----------------------------------------------");
-}
-
-
--(void)refresh{//Added by JWiggs to refresh playlist every xx secs
-    
-//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
-//    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path]; 
-//    NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-//    
-//    webView.opaque = NO; 
-//    webView.backgroundColor = [UIColor clearColor];     
-//    [self.webView loadHTMLString:htmlString baseURL:nil];
-//    [htmlString release];
-  
-  
-
+  [recentlyPlayedTableView reloadData];
 }
 
 - (IBAction)showInfoView:(id)sender {
@@ -274,6 +254,44 @@
   infoController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   [self presentModalViewController:infoController animated:YES];
   [infoController release];
+}
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return 5;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+  if (recentlyPlayed != nil) {
+    NSDictionary *dict = [recentlyPlayed objectAtIndex:indexPath.row];
+    cell.textLabel.text = [dict objectForKey:@"track"];
+    cell.detailTextLabel.text = [dict objectForKey:@"artist"];
+  }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"Cell";
+  
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (cell == nil) {
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    UIColor *darkGray = [UIColor colorWithRed:0.094 green:0.094 blue:0.094 alpha:1.0];
+    [cell.contentView setBackgroundColor:darkGray];
+    [cell.textLabel setBackgroundColor:darkGray];
+    [cell.textLabel setTextColor:[UIColor lightGrayColor]];
+  }
+  
+  [self configureCell:cell atIndexPath:indexPath];
+  
+  return cell;
 }
 
 @end

@@ -4,7 +4,7 @@
 @class Reachability;
 @class InfoViewController;
 
-@interface PlayerViewController : UIViewController {
+@interface PlayerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
   AudioStreamer *streamer;
   UIView *volumeSlider;
   UIButton *playbackButton;
@@ -19,13 +19,14 @@
 @property (retain, nonatomic) IBOutlet UILabel *nowPlayingArtistLabel;
 @property (retain, nonatomic) IBOutlet UILabel *nowPlayingTrackLabel;
 @property (retain, nonatomic) IBOutlet UILabel *nowPlayingLabelLabel;
+@property (retain, nonatomic) IBOutlet UITableView *recentlyPlayedTableView;
+@property (retain, nonatomic) NSMutableArray *recentlyPlayed;
 
 - (IBAction)playbackButtonPressed:(id)sender;
 - (void)destroyStreamer;
 - (void)createStreamer;
 - (void)alertNoConnection;
 - (void)updateInterfaceWithReachability:curReach;
-- (void)refresh;
 
 - (IBAction)showInfoView:(id)sender;
 
