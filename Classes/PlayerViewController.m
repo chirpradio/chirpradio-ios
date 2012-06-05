@@ -291,8 +291,8 @@
     UIColor *darkGray = [UIColor colorWithRed:0.094 green:0.094 blue:0.094 alpha:1.0];
     [cell.contentView setBackgroundColor:darkGray];
     [cell.textLabel setBackgroundColor:darkGray];
-    [cell.textLabel setTextColor:[UIColor whiteColor]];
-    [cell.detailTextLabel setTextColor:[UIColor whiteColor]];
+    [cell.textLabel setTextColor:[UIColor lightGrayColor]];
+    [cell.detailTextLabel setTextColor:[UIColor lightGrayColor]];
   }
   
   [self configureCell:cell atIndexPath:indexPath];
