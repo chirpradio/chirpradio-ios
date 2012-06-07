@@ -182,7 +182,7 @@
     NSString *apiEndpoint = @"http://chirpradio.appspot.com/api/current_playlist?src=src=chirpradio-iphone";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:apiEndpoint]
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy 
-                                         timeoutInterval:30.0];
+                                         timeoutInterval:12.0];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
