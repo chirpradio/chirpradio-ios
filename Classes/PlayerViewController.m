@@ -198,11 +198,7 @@
   [self createStreamer];
   [streamer start];
     
-<<<<<<< HEAD
     timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
-=======
-    timer = [NSTimer scheduledTimerWithTimeInterval:12 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
->>>>>>> 2a5ed7b2e376c2e99f8bbf3192e19683d2320801
     
     [htmlString release];
   

@@ -43,11 +43,7 @@
             </style>
         
         <script type="text/javascript">
-<<<<<<< HEAD
             /*var dj=("<span id='dj'></span>");
-=======
-            var dj=("<span id='dj'></span>");
->>>>>>> 2a5ed7b2e376c2e99f8bbf3192e19683d2320801
             var artist=("<span id='artist'></span>");
             var track=("<span id='track'></span>");
             var release=("<span id='release'></span>");
@@ -86,11 +82,7 @@
             document.write("<p3><b>" + artist1 + "</b>" + track1 + "<i>" + release1 + " " + label1 + "</i></p3><br /><br />");
             document.write("<p3><b>" + artist2 + "</b>" + track2 + "<i>" + release2 + " " + label2 + "</i></p3><br /><br />");
             document.write("<p3><b>" + artist3 + "</b>" + track3 + "<i>" + release3 + " " + label3 + "</i></p3><br /><br />");
-<<<<<<< HEAD
             document.write("<p3><b>" + artist4 + "</b>" + track4 + "<i>" + release4 + " " + label4 + "</i></p3><br /><br /></p>");*/
-=======
-            document.write("<p3><b>" + artist4 + "</b>" + track4 + "<i>" + release4 + " " + label4 + "</i></p3><br /><br /></p>");
->>>>>>> 2a5ed7b2e376c2e99f8bbf3192e19683d2320801
             
             function callChirpJSONP()
             {   
@@ -144,38 +136,7 @@
             
             function processResponse(response)
             {
-<<<<<<< HEAD
-                document.getElementById("dj").innerHTML="<b>ON AIR: </b>"+response.now_playing.dj
-                document.getElementById("artist").innerHTML=response.now_playing.artist      
-                document.getElementById("track").innerHTML="&#160;&#45;&#160;"+response.now_playing.track+" from "
-                document.getElementById("release").innerHTML=response.now_playing.release
-                document.getElementById("label").innerHTML="&#40;"+response.now_playing.label+"&#41;"
-                
-                document.getElementById("artist0").innerHTML=response.recently_played[0].artist
-                document.getElementById("track0").innerHTML="&#160;&#45;&#160;"+response.recently_played[0].track+" from "
-                document.getElementById("release0").innerHTML=response.recently_played[0].release
-                document.getElementById("label0").innerHTML="&#40;"+response.recently_played[0].label+"&#41;"
-                
-                document.getElementById("artist1").innerHTML=response.recently_played[1].artist
-                document.getElementById("track1").innerHTML="&#160;&#45;&#160;"+response.recently_played[1].track+" from "
-                document.getElementById("release1").innerHTML=response.recently_played[1].release
-                document.getElementById("label1").innerHTML="&#40;"+response.recently_played[1].label+"&#41;"
-                
-                document.getElementById("artist2").innerHTML=response.recently_played[2].artist
-                document.getElementById("track2").innerHTML="&#160;&#45;&#160;"+response.recently_played[2].track+" from "
-                document.getElementById("release2").innerHTML=response.recently_played[2].release
-                document.getElementById("label2").innerHTML="&#40;"+response.recently_played[2].label+"&#41;"
-                
-                document.getElementById("artist3").innerHTML=response.recently_played[3].artist
-                document.getElementById("track3").innerHTML="&#160;&#45;&#160;"+response.recently_played[3].track+" from "
-                document.getElementById("release3").innerHTML=response.recently_played[3].release
-                document.getElementById("label3").innerHTML="&#40;"+response.recently_played[3].label+"&#41;"
-                
-                document.getElementById("artist4").innerHTML=response.recently_played[4].artist
-                document.getElementById("track4").innerHTML="&#160;&#45;&#160;"+response.recently_played[4].track+" from "
-                document.getElementById("release4").innerHTML=response.recently_played[4].release
-                document.getElementById("label4").innerHTML="&#40;"+response.recently_played[4].label+"&#41;"
-=======
+
              document.getElementById("dj").innerHTML="<b>ON AIR: </b>"+response.now_playing.dj
              document.getElementById("artist").innerHTML=response.now_playing.artist      
              document.getElementById("track").innerHTML="&#160;&#45;&#160;"+response.now_playing.track+" from "
@@ -206,7 +167,6 @@
              document.getElementById("track4").innerHTML="&#160;&#45;&#160;"+response.recently_played[4].track+" from "
              document.getElementById("release4").innerHTML=response.recently_played[4].release
              document.getElementById("label4").innerHTML="&#40;"+response.recently_played[4].label+"&#41;"
->>>>>>> 2a5ed7b2e376c2e99f8bbf3192e19683d2320801
             }  
             
         </script>
