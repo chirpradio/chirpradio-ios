@@ -186,7 +186,7 @@
     NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
     
     webView.opaque = NO; 
-    webView.backgroundColor = [UIColor clearColor]; //colorWithWhite:1.0 alpha:0.4];
+    webView.backgroundColor = [UIColor clearColor];
 
     [self.webView loadHTMLString:htmlString baseURL:nil];
    
@@ -198,12 +198,13 @@
   [self createStreamer];
   [streamer start];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
     
     [htmlString release];
   
 }
 -(void)refresh{//Added by JWiggs to refresh playlist every xx secs
+    //[webView stringByEvaluatingJavaScriptFromString:@"callChirpJSONP()"];
     
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
     NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path]; 
