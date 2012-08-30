@@ -11,7 +11,6 @@
 @synthesize playbackButton;
 @synthesize webView;
 
-
 - (BOOL)canBecomeFirstResponder {
   return YES;
 }
@@ -198,25 +197,15 @@
   [self createStreamer];
   [streamer start];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
-    
+    timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
+
     [htmlString release];
   
 }
--(void)refresh{//Added by JWiggs to refresh playlist every xx secs
-    //[webView stringByEvaluatingJavaScriptFromString:@"callChirpJSONP()"];
-    
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
-    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path]; 
-    NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    
-    webView.opaque = NO; 
-    webView.backgroundColor = [UIColor clearColor];     
-    [self.webView loadHTMLString:htmlString baseURL:nil];
-    [htmlString release];
+-(void)refresh{
+    [webView stringByEvaluatingJavaScriptFromString:@"callChirpJSONP()"];
     
 }
-
 - (IBAction)showInfoView:(id)sender {
   InfoViewController *infoController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
   infoController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
