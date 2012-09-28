@@ -9,7 +9,7 @@
 
 @synthesize volumeSlider;
 @synthesize playbackButton;
-@synthesize webView;
+@synthesize webView, backgroundImageView;
 
 - (BOOL)canBecomeFirstResponder {
   return YES;
@@ -170,6 +170,11 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  if ([[UIScreen mainScreen] bounds].size.height == 568) {
+    UIImage *bg568Image = [UIImage imageNamed:@"bg-568"];
+    [backgroundImageView setImage:bg568Image];
+  }
   
   // Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the
   // method "reachabilityChanged" will be called. 

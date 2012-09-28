@@ -16,6 +16,7 @@
 @property (nonatomic, retain) IBOutlet UIView *volumeSlider;
 @property (nonatomic, retain) IBOutlet UIButton *playbackButton;
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundImageView;
 
 - (IBAction)playbackButtonPressed:(id)sender;
 - (void)destroyStreamer;
