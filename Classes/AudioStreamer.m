@@ -785,7 +785,7 @@ void ASReadStreamCallBack
 			if (state != AS_STOPPING &&
 				state != AS_STOPPED)
 			{
-				NSLog(@"### Not starting audio thread. State code is: %ld", state);
+				NSLog(@"### Not starting audio thread. State code is: %d", state);
 			}
 			self.state = AS_INITIALIZED;
 			[pool release];
@@ -1448,7 +1448,7 @@ cleanup:
 					if (metaDataBytesRemaining > 0)
 					{
 						//NSLog(@"meta: %C", bytes[i]);
-						[metaDataString appendFormat:@"%C", bytes[i]];
+						[metaDataString appendFormat:@"%c", bytes[i]];
 						
 						metaDataBytesRemaining -= 1;
 						
@@ -1673,7 +1673,7 @@ cleanup:
 			err = AudioFileStreamGetPropertyInfo(inAudioFileStream, kAudioFileStreamProperty_FormatList, &formatListSize, &writable);
 			if (!err)
 			{
-				NSLog(@"formatListSize %d\n", formatListSize);
+				NSLog(@"formatListSize %ld\n", formatListSize);
 				
 				// get the FormatList data
 				void* formatListData = calloc(1, formatListSize);
@@ -1689,7 +1689,7 @@ cleanup:
 				{
 					AudioStreamBasicDescription *pasbd = formatListData + x;
 					
-					NSLog(@"rate: %lf  Format:%c%c%c%c  FramesPerPacket:%d  bytesPerFrame:%d ChannelsperFrame:%d\r\n",
+					NSLog(@"rate: %lf  Format:%lu%lu%lu%lu  FramesPerPacket:%ld  bytesPerFrame:%ld ChannelsperFrame:%ld\r\n",
 						  pasbd->mSampleRate, (pasbd->mFormatID>>24)&255, (pasbd->mFormatID>>16)&255, (pasbd->mFormatID>>8)&255, (pasbd->mFormatID)&255,
 						  pasbd->mFramesPerPacket, pasbd->mBytesPerFrame, pasbd->mChannelsPerFrame);
 					
@@ -1708,7 +1708,7 @@ cleanup:
 			}	
 			
 			
-			NSLog(@"Format:%c%c%c%c\r\n",
+			NSLog(@"Format:%lu%lu%lu%lu\r\n",
 				  (asbd.mFormatID>>24)&255, (asbd.mFormatID>>16)&255, (asbd.mFormatID>>8)&255, (asbd.mFormatID)&255);
 			
 			if (asbd.mFormatID == kAudioFormatMPEGLayer1)
