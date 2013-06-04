@@ -62,14 +62,15 @@
     return;
   }
   [self destroyStreamer];
-  
-  NSURL *url = [NSURL URLWithString:@"http://www.live365.com/play/chirpradio"];
+
+  // This is the canonical stream URL; it will redirect to the real URL.
+  NSURL *url = [NSURL URLWithString:@"http://chirpradio.org/stream"];
   streamer = [[AudioStreamer alloc] initWithURL:url];
-  
+
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(playbackStateChanged:)
                                                name:ASStatusChangedNotification
-                                             object:streamer];  
+                                             object:streamer];
 }
 
 - (IBAction)playbackButtonPressed:(id)sender
