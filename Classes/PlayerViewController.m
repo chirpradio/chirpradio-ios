@@ -21,7 +21,7 @@
   if ([device respondsToSelector:@selector(isMultitaskingSupported)]) {
     hasMultitasking = device.multitaskingSupported;
   }
-  
+
   if (hasMultitasking) {
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
@@ -62,14 +62,15 @@
     return;
   }
   [self destroyStreamer];
-  
-  NSURL *url = [NSURL URLWithString:@"http://www.live365.com/play/chirpradio"];
+
+  // This is the canonical stream URL; it will redirect to the real URL.
+  NSURL *url = [NSURL URLWithString:@"http://chirpradio.org/stream"];
   streamer = [[AudioStreamer alloc] initWithURL:url];
-  
+
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(playbackStateChanged:)
                                                name:ASStatusChangedNotification
-                                             object:streamer];  
+                                             object:streamer];
 }
 
 - (IBAction)playbackButtonPressed:(id)sender
@@ -84,7 +85,7 @@
     [streamer pause];
   } else {
     [streamer start];
-    
+
   }
 }
 
@@ -127,7 +128,7 @@
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Streaming Error" message:@"No Internet Connection"
 												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];   
+    [alert show];
     [alert release];
 }
 
@@ -154,14 +155,14 @@
   [volumeSlider release];
   [playbackButton release];
   [hostReach release];
-  [webView release];  
+  [webView release];
   [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning {
   // Releases the view if it doesn't have a superview.
   [super didReceiveMemoryWarning];
-  
+
   // Release any cached data, images, etc that aren't in use.
 }
 
@@ -170,46 +171,46 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+
   if ([[UIScreen mainScreen] bounds].size.height == 568) {
     UIImage *bg568Image = [UIImage imageNamed:@"bg-568"];
     [backgroundImageView setImage:bg568Image];
   }
-  
+
   // Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the
-  // method "reachabilityChanged" will be called. 
+  // method "reachabilityChanged" will be called.
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
-	
+
 	hostReach = [[Reachability reachabilityWithHostName: @"www.live365.com"] retain];
 	[hostReach startNotifer];
-    
+
     /*Playlist code added by Jason Wiggs 3/13/2012 */
-    
+
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Playlist" ofType:@"html"];
-    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path];    
+    NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path];
     NSString *htmlString = [[NSString alloc] initWithData: [readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
-    
-    webView.opaque = NO; 
+
+    webView.opaque = NO;
     webView.backgroundColor = [UIColor clearColor];
 
     [self.webView loadHTMLString:htmlString baseURL:nil];
-   
+
 
   MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
   [volumeSlider addSubview:volumeView];
   [volumeView sizeToFit];
-  
+
   [self createStreamer];
   [streamer start];
-    
+
     timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(refresh) userInfo:nil repeats: YES];
 
     [htmlString release];
-  
+
 }
 -(void)refresh{
     [webView stringByEvaluatingJavaScriptFromString:@"callChirpJSONP()"];
-    
+
 }
 - (IBAction)showInfoView:(id)sender {
   InfoViewController *infoController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
